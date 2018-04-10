@@ -31,6 +31,36 @@
     (die `("Usage: " ,*run-file* " filename"))
 )
 
+(define *symbol-table* (make-hash))
+(define (symbol-get key)
+        (hash-ref *symbol-table* key))
+(define (symbol-put! key value)
+        (hash-set! *symbol-table* key value))
+
+(for-each
+    (lambda (pair)
+            (symbol-put! (car pair) (cadr pair)))
+    `(
+
+        (log10_2 0.301029995663981195213738894724493026768189881)
+        (sqrt_2  1.414213562373095048801688724209698078569671875)
+        (e       2.718281828459045235360287471352662497757247093)
+        (pi      3.141592653589793238462643383279502884197169399)
+        (div     ,(lambda (x y) (floor (/ x y))))
+        (log10   ,(lambda (x) (/ (log x) (log 10.0))))
+        (mod     ,(lambda (x y) (- x (* (div x y) y))))
+        (quot    ,(lambda (x y) (truncate (/ x y))))
+        (rem     ,(lambda (x y) (- x (* (quot x y) y))))
+        (+       ,+)
+        (^       ,expt)
+        (ceil    ,ceiling)
+        (exp     ,exp)
+        (floor   ,floor)
+        (log     ,log)
+        (sqrt    ,sqrt)
+
+     ))
+
 (define (readlist-from-inputfile filename)
     (let ((inputfile (open-input-file filename)))
          (if (not (input-port? inputfile))
@@ -46,12 +76,31 @@
     (printf "(~n")
     (map (lambda (line) (printf "~s~n" line)) program)
     (printf ")~n"))
+(define (what-kind value)
+    (cond ((real? value) 'real)
+          ((vector? value) 'vector)
+          ((procedure? value) 'procedure)
+          (else 'other)))
 
 (define (main arglist)
     (if (or (null? arglist) (not (null? (cdr arglist))))
         (usage-exit)
         (let* ((sbprogfile (car arglist))
-               (program (readlist-from-inputfile sbprogfile)))
-              (write-program-by-line sbprogfile program))))
+             	(program (readlist-from-inputfile sbprogfile)))
+            	(write-program-by-line sbprogfile program)))
+		(symbol-put! 'n (expt 2.0 32.0))
+		(symbol-put! 'a (make-vector 10 0.0))
+		(vector-set! (symbol-get 'a) 3 (symbol-get 'pi))
+		(printf "2 ^ 16 = ~s~n" ((symbol-get '^) 2.0 16.0))
+		(printf "log 2 = ~s~n" ((symbol-get 'log) 2.0))
+		(printf "log10 2 = ~s~n" ((symbol-get 'log10) 2.0))
+		(newline)
+		(printf "*symbol-table*:~n")
+		(hash-for-each *symbol-table*
+			(lambda (key value)
+				(printf "~s : ~s = ~s~n" key (what-kind value) value))
+		    ))
+
+		
 
 (main (vector->list (current-command-line-arguments)))
