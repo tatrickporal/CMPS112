@@ -75,6 +75,7 @@
     (printf "(~n")
     (map (lambda (line) (printf "~s~n" line)) program)
     (printf ")~n"))
+
 (define (what-kind value)
     (cond ((real? value) 'real)
           ((vector? value) 'vector)
@@ -93,7 +94,7 @@
 		(printf "2 ^ 16 = ~s~n" ((symbol-get '^) 2.0 16.0))
 		(printf "log 2 = ~s~n" ((symbol-get 'log) 2.0))
 		(printf "log10 2 = ~s~n" ((symbol-get 'log10) 2.0))
-		(printf "THIS IS PI = " ((symbol-get 'pi)))
+		(printf "THIS IS PI = ~n" ((symbol-get 'n)))
 		(newline)
 		(printf "*symbol-table*:~n")
 
