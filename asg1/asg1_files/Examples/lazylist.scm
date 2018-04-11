@@ -1,4 +1,4 @@
-$Id: lazylist.scm,v 1.1 2009-02-12 19:38:42-08 - - $
+;;$Id: lazylist.scm,v 1.1 2009-02-12 19:38:42-08 - - $
 
 ;;
 ;; This program shows factorial, the ``hello world'' of functional
