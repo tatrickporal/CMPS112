@@ -88,20 +88,20 @@
         (let* ((sbprogfile (car arglist))
              	(program (readlist-from-inputfile sbprogfile)))
             	(write-program-by-line sbprogfile program)))
-		(symbol-put! 'n (expt 2.0 32.0))
-		(symbol-put! 'a (make-vector 10 0.0))
-		(vector-set! (symbol-get 'a) 3 (symbol-get 'pi))
-		(printf "2 ^ 16 = ~s~n" ((symbol-get '^) 2.0 16.0))
-		(printf "log 2 = ~s~n" ((symbol-get 'log) 2.0))
-		(printf "log10 2 = ~s~n" ((symbol-get 'log10) 2.0))
-		(printf "THIS IS PI = ~s~n" ((symbol-get 'log10) 2.0))
-		(newline)
-		(printf "*symbol-table*:~n")
-
-		(hash-for-each *symbol-table*
-			(lambda (key value)
-				(printf "~s : ~s = ~s~n" key (what-kind value) value))
-		    ))
+				(symbol-put! 'n (expt 2.0 32.0))
+				(symbol-put! 'a (make-vector 10 0.0))
+				(vector-set! (symbol-get 'a) 3 (symbol-get 'pi))
+				(printf "2 ^ 16 = ~s~n" ((symbol-get '^) 2.0 16.0))
+				(printf "log 2 = ~s~n" ((symbol-get 'log) 2.0))
+				(printf "log10 2 = ~s~n" ((symbol-get 'log10) 2.0))
+				(printf "THIS IS PI = ~s~n" ((symbol-get 'log10) 2.0))
+				
+				(newline)
+				(printf "*symbol-table*:~n")
+				(hash-for-each *symbol-table*
+					(lambda (key value)
+						(printf "~s : ~s = ~s~n" key (what-kind value) value))
+				    ))
 
 		
 
