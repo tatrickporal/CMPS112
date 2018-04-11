@@ -58,7 +58,6 @@
         (floor   ,floor)
         (log     ,log)
         (sqrt    ,sqrt)
-
      ))
 
 (define (readlist-from-inputfile filename)
@@ -96,6 +95,7 @@
 		(printf "log10 2 = ~s~n" ((symbol-get 'log10) 2.0))
 		(newline)
 		(printf "*symbol-table*:~n")
+		(printf "THIS IS PI!!!!~n" ((symbol-get'pi))
 		(hash-for-each *symbol-table*
 			(lambda (key value)
 				(printf "~s : ~s = ~s~n" key (what-kind value) value))
