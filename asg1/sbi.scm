@@ -41,7 +41,7 @@
 )
 
 (define printline (lambda(line)
-		(printf "~s~n" cdr line)
+		(printf "~s~n" (cdr line))
 	)
 )
 
