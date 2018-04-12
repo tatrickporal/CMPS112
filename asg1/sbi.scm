@@ -37,15 +37,15 @@
              (die `(,*run-file* ": " ,filename ": open failed"))
              (let ((program (read inputfile)))
                   (close-input-port inputfile)
-                  program))))
+             		program))))
 
 (define (write-program-by-line filename program)
     (printf "==================================================~n")
     (printf "~a: ~s~n" *run-file* filename)
     (printf "==================================================~n")
-    (printf "(~n")
+    (printf "~n")
     (map (lambda (line) (printf "~s~n" line)) program)
-    (printf ")~n"))
+    (printf "~n"))
 
 (define (what-kind value)
     (cond ((real? value) 'real)
