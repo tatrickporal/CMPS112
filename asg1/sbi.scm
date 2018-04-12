@@ -39,11 +39,15 @@
                   (close-input-port inputfile)
              		program) )))
 
+(define printline (lambda(line)
+		(printf "~s~n" line)
+	)
+)
 (define (write-program-by-line filename program)
     (printf "==================================================~n")
-    (printf "" *run-file* filename)
+    (printf "~a: ~s~n" *run-file* filename)
     (printf "==================================================~n")
-    (map (lambda (line) (printf "~s~n" line)) program)
+    (map (lambda (line) (printline line)) program)
 )
     
 (define (what-kind value)
