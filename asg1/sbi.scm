@@ -41,7 +41,7 @@
 )
 
 (define printline (lambda(line)
-		(printf "~s~n" (cdr line))
+		(printf "~s~n" line)
 	)
 )
 
@@ -49,7 +49,7 @@
     (printf "==================================================~n")
     (printf "~a: ~s~n" *run-file* filename)
     (printf "==================================================~n")
-    (map (lambda (line) (printline line)) program)
+    (map (lambda (line) (printline program)) program)
 )
     
 (define (what-kind value)
