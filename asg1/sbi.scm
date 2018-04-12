@@ -37,7 +37,8 @@
              (die `(,*run-file* ": " ,filename ": open failed"))
              (let ((program (read inputfile)))
                   (close-input-port inputfile)
-             		program) )))
+             		program) ))
+)
 
 (define printline (lambda(line)
 		(printf "~s~n" line)
