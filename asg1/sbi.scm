@@ -43,9 +43,8 @@
     (printf "==================================================~n")
     (printf "~a: ~s~n" *run-file* filename)
     (printf "==================================================~n")
-    (printf "~n")
     (map (lambda (line) (printf "~s~n" line)) program)
-    (printf "~n"))
+    
 
 (define (what-kind value)
     (cond ((real? value) 'real)
