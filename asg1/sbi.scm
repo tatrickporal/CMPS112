@@ -41,7 +41,9 @@
 )
 
 (define (iterate_through_program program)
-	(map (lambda (line) (printf "~s~n" line))  program)
+	(if (not (list? lst))
+		(map (lambda (line) (printf "~s~n" line))  program)
+	)
 )
 
 (define (write-program-by-line filename program)
