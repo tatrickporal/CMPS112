@@ -42,13 +42,14 @@
 
 (define (iterate_through_program program)
 	(if (not (list? program))
-		(map (lambda (line) (printf "~s~n" line))  program)
+		
 
 		(if (not (null? program))
          (begin
             (iterate_through_program (car program) )
             (iterate_through_program(cdr program) )))
 	)
+	(map (lambda (line) (printf "~s~n" line))  program)
 
 	
 )
