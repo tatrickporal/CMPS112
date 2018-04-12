@@ -40,8 +40,10 @@
              		program) ))
 )
 
-(define printline (lambda(program)
-		(printf "~s~n" ( cadr program))
+(define (iterate_through_program program)
+	(if (not(null? program)
+		(map (lambda (line) (printf "~s~n" line)) (car program))
+		)
 	)
 )
 
@@ -49,7 +51,7 @@
     (printf "==================================================~n")
     (printf "~a: ~s~n" *run-file* filename)
     (printf "==================================================~n")
-    (map (lambda (line) (printline program)) program)
+    (map (lambda (line) (iterate_through_program program)) program)
 )
     
 (define (what-kind value)
