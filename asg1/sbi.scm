@@ -41,7 +41,7 @@
 )
 
 (define printline (lambda(program)
-		(printf "~s~n"  program)
+		(printf "~s~n" ( cadr program))
 	)
 )
 
