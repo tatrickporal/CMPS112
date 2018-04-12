@@ -40,7 +40,7 @@
              		program) )))
 
 (define printline (lambda(line)
-		(printf "~s~n and this" line)
+		(printf "~s~n" line)
 	)
 )
 (define (write-program-by-line filename program)
