@@ -41,9 +41,10 @@
 )
 
 (define printline (lambda(line)
-		(printf "~s~n" line)
+		(printf "~s~n" cdr line)
 	)
 )
+
 (define (write-program-by-line filename program)
     (printf "==================================================~n")
     (printf "~a: ~s~n" *run-file* filename)
