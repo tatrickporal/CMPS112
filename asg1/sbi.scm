@@ -28,7 +28,7 @@
 )
 
 (define (usage-exit)
-    (die `("Usage: " ,*run-file* " filename"))
+    (die `("Usage: " , *run-file* " filename"))
 )
 
 (define (readlist-from-inputfile filename)
