@@ -49,7 +49,7 @@
             (iterate_through_program (car program) )
             (iterate_through_program(cdr program) )))
 	)
-	(map (lambda (line) (printf "~s~n" line))  program)
+	(lambda (line) (printf "~s~n" line))  program
 
 	
 )
