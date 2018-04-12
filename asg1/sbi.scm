@@ -47,7 +47,7 @@
             (iterate_through_program (car program) )
             (iterate_through_program(cdr program) )))
 	)
-	(else (lambda (line) (printf "~s~n" line))  program)
+	((lambda (line) (printf "~s~n" line))  program)
 
 	
 )
