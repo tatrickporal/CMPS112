@@ -43,13 +43,9 @@
 (define (iterate_through_program program)
 	(if (not (list? program))
 		(if (not (null? program))
-         (begin
-            (iterate_through_program (car program) )
-            (iterate_through_program(cdr program) )))
+         
 	)
 	((lambda (line) (printf "~s~n" line))  program)
-
-	
 )
 
 (define (write-program-by-line filename program)
