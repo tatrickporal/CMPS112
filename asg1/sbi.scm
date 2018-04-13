@@ -60,7 +60,7 @@
 ))
 
 (define (iterate_through_chars const)
-		  (printf "~s~n" const )
+		  (printf "~s~n" line )
 )
 
 (define (iterate_through_line line)
@@ -75,8 +75,8 @@
     (printf "==================================================~n")
     (map 
     	(lambda (line) 
-    		(iterate_through_line  line)
-    	 )  
+    		(printf "~s~n" line )  line
+    	)  
     program)
 )
     
