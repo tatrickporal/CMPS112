@@ -41,8 +41,7 @@
 )
 
 (define (iterate_through_program program)
-	(cond ((list? program) (map (lambda (line) (printf "~s~n" line))  program))
-		  
+	(cond ((list? program) (map (lambda (line) (printf "~s~n" line))  program))	  
 	)
 )
 
