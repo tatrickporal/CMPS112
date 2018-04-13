@@ -40,9 +40,30 @@
              		program) ))
 )
 
+(define tests `(
+
+   (,boolean?   boolean?)
+   (,char?      char?)
+   (,complex?   complex?)
+   (,integer?   integer?)
+   (,list?      list?)
+   (,number?    number?)
+   (,pair?      pair?)
+   (,path?      path?)
+   (,procedure? procedure?)
+   (,rational?  rational?)
+   (,real?      real?)
+   (,string?    string?)
+   (,symbol?    symbol?)
+   (,vector?    vector?)
+
+))
+
 (define (iterate_through_line line)
-	(cond ((list? line) (map (lambda (symbol) (printf "~s~n this" symbol))  line))	  
-	)
+	(when (not (null? list))
+		(map (lambda (symbol) (printf "~s~n this" symbol))  line)
+	)  
+	
 )
 
 (define (write-program-by-line filename program)
