@@ -60,7 +60,7 @@
 ))
 
 (define (iterate_through_line line)
-	(when (not (null? list))
+	(when (not (null? line))
 		( map (lambda (symbol) (printf "~s~n okayy" symbol))  line)
 	(iterate_through_line (cdr line)))  
 	
