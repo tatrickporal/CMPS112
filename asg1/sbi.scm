@@ -74,7 +74,7 @@
     (printf "~a: ~s~n" *run-file* filename)
     (printf "==================================================~n")
     (map 
-    	(lambda (line) 
+    	(lambda (car line) 
     		(printf "~s~n" line )  line
     	)  
     program)
