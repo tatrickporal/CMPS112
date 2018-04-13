@@ -49,7 +49,7 @@
     (printf "==================================================~n")
     (printf "~a: ~s~n" *run-file* filename)
     (printf "==================================================~n")
-    (map (lambda (line) (printf "~s~n" line))  (car (caddr program)))
+    (map (lambda (line) (printf "~s~n" line))  (car program))
 )
     
 (define (what-kind value)
