@@ -59,14 +59,10 @@
 
 ))
 
-(define (iterate_through_chars const)
-		  (printf "~s~n" line )
-)
-
-(define (iterate_through_line line)
+(define (parse_line line)
 	(when (not (null? line))
-		  (iterate_through_chars (car line))
-	(iterate_through_line (cdr line)))  	
+		  (parse_line (car line))
+	(parse_line (cdr line)))  	
 )
 
 (define (write-program-by-line filename program)
@@ -75,7 +71,7 @@
     (printf "==================================================~n")
     (map 
     	(lambda ( line) 
-    		(printf "~s~n" (cdr line) )  
+    		(parse_line (cdr line) )  
     	)  
     program)
 )
