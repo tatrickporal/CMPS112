@@ -61,7 +61,7 @@
 
 (define (iterate_through_line line)
 	(when (not (null? list))
-		(map (lambda (symbol) (printf "~s~n this" symbol))  line)
+		(map (lambda (symbol) (printf "~s~n okayy" symbol))  line)
 	)  
 	
 )
