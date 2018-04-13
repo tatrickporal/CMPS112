@@ -61,7 +61,7 @@
 
 (define (iterate_through_line line)
 	(when (not (null? line))
-		  (printf "~s~n okayy" (car line))
+		  (printf "~s~n okayy" (cadr line))
 	(iterate_through_line (cdr line)))  
 	
 )
