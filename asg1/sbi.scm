@@ -59,7 +59,7 @@
 
 ))
 
-(define (parse_line line)
+(define parse_line line
 	(when (not (null? line))
 		  (parse_line (car line))
 	(parse_line (cdr line)))  	
@@ -70,7 +70,7 @@
     (printf "~a: ~s~n" *run-file* filename)
     (printf "==================================================~n")
     (map 
-    	(lambda ( line) 
+    	(lambda (line) 
     		(parse_line (cdr line) )  
     	)  
     program)
