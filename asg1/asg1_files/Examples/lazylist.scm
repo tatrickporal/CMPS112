@@ -1,3 +1,4 @@
+#!/afs/cats.ucsc.edu/courses/cmps112-wm/usr/racket/bin/mzscheme -qr
 ;;$Id: lazylist.scm,v 1.1 2009-02-12 19:38:42-08 - - $
 
 ;;
