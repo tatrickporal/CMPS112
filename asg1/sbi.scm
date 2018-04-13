@@ -61,8 +61,9 @@
 
 (define (parse_line line)
 	(when (not (null? line))
-		  (parse_line (car line))
-	(parse_line (cdr line)))  	
+		  (printf  "~s~n" (car line))
+ 	
+	)
 )
 
 (define (write-program-by-line filename program)
