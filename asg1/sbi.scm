@@ -59,10 +59,10 @@
 
 ))
 
-(define (iterate_through_chars line)
+(define (iterate_through_chars cons)
 	(when (not (null? line))
-		  (printf "~s~n okayy" (car line))
-	(iterate_through_chars (cdr line)))  	
+		  (printf "~s~n okayy" cons )
+	(iterate_through_chars (car cons)))  	
 )
 
 (define (iterate_through_line line)
