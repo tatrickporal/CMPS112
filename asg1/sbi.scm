@@ -41,7 +41,7 @@
 )
 
 (define (iterate_through_program program)
-	(if (not (list? program))
+	(if (list? program)
 	(map (lambda (line) (printf "~s~n" line))  program)
 	)
 )
