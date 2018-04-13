@@ -60,7 +60,7 @@
 ))
 
 (define (iterate_through_chars const)
-		  (printf "~n okayy" const )
+		  (printf "~s okayy" const )
 )
 
 (define (iterate_through_line line)
