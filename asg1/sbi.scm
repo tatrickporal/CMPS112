@@ -59,11 +59,16 @@
 
 ))
 
-(define (iterate_through_line line)
+(define (iterate_through_chars line)
 	(when (not (null? line))
 		  (printf "~s~n okayy" (car line))
-	(iterate_through_line (cdr line)))  
-	
+	(iterate_through_chars (cdr line)))  	
+)
+
+(define (iterate_through_line line)
+	(when (not (null? line))
+		  (iterate_through_chars (car line))
+	(iterate_through_line (cdr line)))  	
 )
 
 (define (write-program-by-line filename program)
