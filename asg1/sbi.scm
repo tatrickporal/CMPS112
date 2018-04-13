@@ -41,7 +41,7 @@
 )
 
 (define (iterate_through_line line)
-	(cond ((list? line) (map (lambda (symbol) (printf "~s~n" symbol))  line))	  
+	(cond ((list? line) (map (lambda (symbol) (printf "~s~n this" symbol))  line))	  
 	)
 )
 
