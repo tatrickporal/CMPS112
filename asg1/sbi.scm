@@ -40,8 +40,8 @@
              		program) ))
 )
 
-(define (iterate_through_program program)
-	(cond ((list? program) (map (lambda (line) (printf "~s~n" line))  program))	  
+(define (iterate_through_line line)
+	(cond ((list? line) (map (lambda (symbol) (printf "~s~n" symbol))  line))	  
 	)
 )
 
@@ -49,8 +49,9 @@
     (printf "==================================================~n")
     (printf "~a: ~s~n" *run-file* filename)
     (printf "==================================================~n")
-    (map (lambda (line) (printf "~s~n" line)
-
+    (map 
+    	(lambda (line) 
+    		(iterate_through_line  line)
     	 )  
     program)
 )
