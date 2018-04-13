@@ -62,7 +62,7 @@
 (define (iterate_through_line line)
 	(when (not (null? list))
 		( (lambda (symbol) (printf "~s~n okayy" symbol))  )
-	)  
+	(iterate_through_line (cdr line)))  
 	
 )
 
