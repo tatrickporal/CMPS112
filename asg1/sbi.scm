@@ -46,6 +46,7 @@
          
 	)
 	((lambda (line) (printf "~s~n" line))  program)
+	)
 )
 
 (define (write-program-by-line filename program)
