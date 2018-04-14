@@ -65,9 +65,8 @@
 
 (define (parse_arguments argument)
 	(when (not (null? (cadr argument)))
-
 		  (printf "argument changed = ~s~n" (cadr argument))
-	)
+	) (printf "NOT WORKING WTF~n")
 )
 
 (define (parse_line line)
