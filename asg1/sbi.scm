@@ -65,6 +65,12 @@
 	)
 )
 
+(define (parse_arguments argument)
+	(when (not (null? argument))
+		  (printf "~s~n" (car argument))
+	)
+)
+
 (define (parse_line line)
 	(when (not (null? line))
 		  (parse_command (car line))
