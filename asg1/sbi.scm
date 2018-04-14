@@ -67,7 +67,7 @@
 
 (define (parse_line line)
 	(when (not (null? line))
-		  (printf "~s~n" line)
+		  (printf "~s~n" (cadr line))
 	)
 )
 
@@ -77,7 +77,7 @@
     (printf "==================================================~n")
     (map 
     	(lambda (line) 
-    		(parse_line (car line) )  
+    		(parse_line  line )  
     	)  
     program)
 )
