@@ -58,7 +58,7 @@
 ))
 
 (define (parse_command command)
-	(when (not (null? command))
+	(when (not (null? (car command)))
 		  (printf " command = ~s~n" (car command))
 	)
 )
