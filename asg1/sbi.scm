@@ -41,7 +41,6 @@
 )
 
 (define tests `(
-
    (,boolean?   boolean?)
    (,char?      char?)
    (,complex?   complex?)
@@ -56,7 +55,6 @@
    (,string?    string?)
    (,symbol?    symbol?)
    (,vector?    vector?)
-
 ))
 
 (define (parse_command command)
@@ -67,7 +65,7 @@
 
 (define (parse_arguments argument)
 	(when (not (null? argument))
-		  (printf "~s~n" (cdr argument))
+		  (printf "~s~n" (cddr argument))
 	)
 )
 
