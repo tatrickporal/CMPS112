@@ -67,7 +67,7 @@
 
 (define (parse_line line)
 	(when (not (null? line))
-		  (printf "~s~n" (cdr line))
+		  (printf "~s~n" line)
 	)
 )
 
