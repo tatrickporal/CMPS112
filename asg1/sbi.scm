@@ -58,12 +58,12 @@
    (,vector?    vector?)
 
 ))
-;;
-;;(define (parse_command command)
-;;	(when (not (null? line))
-;;		  (parse_command (car line))
-;;	)
-;;)
+
+(define (parse_command command)
+	(when (not (null? line))
+		  (parse_command (car line))
+	)
+)
 
 (define (parse_line line)
 	(when (not (null? line))
