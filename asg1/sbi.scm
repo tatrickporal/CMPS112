@@ -61,7 +61,7 @@
 
 (define (parse_command command)
 	(when (not (null? line))
-		  (parse_command (car line))
+		  (printf "~s~n" (cdr line))
 	)
 )
 
