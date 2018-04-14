@@ -67,7 +67,7 @@
 
 (define (parse_arguments argument)
 	(when (not (null? argument))
-		  (printf "~s~n" (car argument))
+		  (printf "~s~n ttt" (car argument))
 	)
 )
 
