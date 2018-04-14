@@ -67,7 +67,7 @@
 
 (define (parse_arguments argument)
 	(when (not (null? argument))
-		  (printf "thisss~s~n" (cadr argument))
+		  (printf "thisss~s~n" (cdr argument))
 	)
 )
 
