@@ -68,16 +68,14 @@
 (define (parse_line line)
 	(when (not (null? line))
 		  (parse_command (car line))
+		  (parse_arguments  (cdr line ))
 	)
 )
 
 (define (write-program-by-line filename program)
-    (printf "==================================================~n")
-    (printf "~a: ~s~n" *run-file* filename)
-    (printf "==================================================~n")
     (map 
     	(lambda (line) 
-    		(parse_line  (cdr line )) 
+    		(parse_line  (cdr line ))
     	)  
     program)
 )
