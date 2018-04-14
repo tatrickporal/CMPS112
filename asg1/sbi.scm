@@ -67,7 +67,7 @@
 
 (define (parse_line line)
 	(when (not (null? line))
-		  (printf "~s~n" (car line))
+		  (printf "~s~n"  line)
 	)
 )
 
