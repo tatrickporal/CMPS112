@@ -60,8 +60,8 @@
 ))
 
 (define (parse_command command)
-	(when (not (null? line))
-		  (printf "~s~n" (cdr line))
+	(when (not (null? command))
+		  (printf "~s~n" (cdr command))
 	)
 )
 
