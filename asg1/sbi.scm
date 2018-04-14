@@ -74,7 +74,7 @@
 (define (parse_line line)
 	(when (not (null? line))
 		  (parse_command (car line))
-		  (parse_arguments  (cdr line ))
+		  (parse_arguments  (cadr line ))
 	)
 )
 
