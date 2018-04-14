@@ -67,14 +67,14 @@
 
 (define (parse_arguments argument)
 	(when (not (null? argument))
-		  (printf "thisss~s~n" (cdr argument))
+		  (printf "~s~n" (cdr argument))
 	)
 )
 
 (define (parse_line line)
 	(when (not (null? line))
 		  (parse_command (car line))
-		  (parse_arguments line )
+		  (parse_arguments (car line )
 	)
 )
 
