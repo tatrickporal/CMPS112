@@ -77,7 +77,7 @@
     (printf "==================================================~n")
     (map 
     	(lambda (line) 
-    		(parse_line (cadr line) )  
+    		(parse_line (car line) )  
     	)  
     program)
 )
