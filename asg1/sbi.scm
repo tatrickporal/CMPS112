@@ -66,20 +66,17 @@
 (define (parse_arguments argument)
 	(when (not (null? (cadr argument))
 		  (printf "argument thi = ~s~n" (cadr argument))
-	) 
-	(equal? (list ()) (argument)
-		  (printf "WHAT THE FUCK  = ~s~n" argument)
-	) 
-)
+		  ) 
 	)
+)
 
 (define (parse_line line)
 	(when (not (null? line))
 		  (parse_command (car line))
 		(when (null? line))	  
 		  (printf "whaddup then?~n")
-		)
 	)
+)
 
 
 (define (write-program-by-line filename program)
