@@ -73,8 +73,9 @@
 (define (parse_line line)
 	(when (not (null? line))
 		  (parse_command (car line))
-		(when (null? line))	  
+		(when (null? line)	  
 		  (printf "whaddup then?~n")
+		)
 	)
 )
 
