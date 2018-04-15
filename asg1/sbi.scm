@@ -67,7 +67,7 @@
 	(when (not (null? (cadr argument))
 		  (printf "argument thi = ~s~n" (cadr argument))
 	) 
-	(when (null? argument)
+	(equal? (list ()) (argument)
 		  (printf "WHAT THE FUCK  = ~s~n" argument)
 	) 
 )
@@ -80,7 +80,7 @@
 		  (printf "whaddup then?~n")
 		)
 	)
-)
+
 
 (define (write-program-by-line filename program)
     (map 
