@@ -64,11 +64,11 @@
 )
 
 (define (parse_arguments argument)
-	(when (not (null? (cadr argument))
+	(when (not (null? (cadr argument)))
 		  (printf "argument thi = ~s~n" (cadr argument))
-		  ) 
-	)
+	) 
 )
+
 
 (define (parse_line line)
 	(when (not (null? line))
