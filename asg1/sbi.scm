@@ -67,7 +67,7 @@
 	(when (not (null? ( argument)))
 		  (printf "argument thi = ~s~n" (cadr argument))
 	) (when (null? argument)
-		  (printf "WHAT THE FUCK  = ~s~n" )
+		  (printf "WHAT THE FUCK  = ~s~n" (cadr argument))
 	) 
 )
 
