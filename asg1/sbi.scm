@@ -66,8 +66,9 @@
 (define (parse_arguments argument)
 	(when (not (null? (cadr argument)))
 		  (printf "argument changed = ~s~n" (cadr argument))
-	) (printf "NOT WORKING WTF~n")
-	(printf "Okay I really dont get scheme~n")
+	) (when (null? (cadr argument))
+		  (printf "WHAT THE FUCK  = ~s~n" )
+	) 
 )
 
 (define (parse_line line)
