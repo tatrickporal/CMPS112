@@ -71,6 +71,7 @@
 		  (printf "WHAT THE FUCK  = ~s~n" argument)
 	) 
 )
+	)
 
 (define (parse_line line)
 	(when (not (null? line))
