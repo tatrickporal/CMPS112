@@ -65,10 +65,10 @@
 
 (define (parse_arguments argument)
 	(when (not (null? argument))
-		  (printf "argument thi = ~s~n" ( argument))
+		  (printf "argument thi = ~s~n" argument)
 	) 
 	(when (null? argument)
-		  (printf "WHAT THE FUCK  = ~s~n" ( argument))
+		  (printf "WHAT THE FUCK  = ~s~n" argument)
 	) 
 )
 
