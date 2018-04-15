@@ -65,7 +65,7 @@
 
 (define (parse_arguments argument)
 	(when (not (null? (cadr argument)))
-		  (printf "argument changed = ~s~n" (cadr argument))
+		  (printf "argument thi = ~s~n" (cadr argument))
 	) (when (null? (cadr argument))
 		  (printf "WHAT THE FUCK  = ~s~n" )
 	) 
