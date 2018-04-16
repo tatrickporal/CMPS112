@@ -80,7 +80,8 @@
 
 (define (decifer line)
 	(when(not(null? line))
-		(printf "~s~n" (cdr line) )
+		(let (command (car line)) )
+		(printf "~s~n" command )
 	)
 )
 
