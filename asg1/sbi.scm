@@ -57,9 +57,28 @@
    (,vector?    vector?)
 ))
 
+(define (show label it)
+    (display label)
+    (display " = ")
+    (display it)
+    (newline)
+)
+
+(define ht (make-hash))
+(for-each
+    (lambda (item) (hash-set! ht (car item) (cadr item)))
+    `(
+   	  (print, (lambda (message) (printf "~s~n" message)))
+      (+ ,(lambda (x y) (+ x y)))
+      (- ,(lambda (x y) (- x y)))
+      (* ,(lambda (x y) (* x y)))
+      (vec ,(make-vector 10 0.0)))
+)
+
+
 (define (parse_command command)
 	(when (not (null? (car command)))
-		  (printf " command = ~s~n" (car command))
+		  (show print (car command))
 	)
 )
 
@@ -68,7 +87,6 @@
 		  (printf "argument thi = ~s~n" (cadr argument))
 	) 
 )
-
 
 (define (parse_line line)
 	(when (not (null? line))
