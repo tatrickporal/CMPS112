@@ -79,7 +79,7 @@
 	(when(not(null? line))
 		(printf "Line being looked at ~s~n" line)
 	)
-	(when(null? line)
+	(when(null? (car line))
 		(printf "Ya done son~n")
 	)	
 )
