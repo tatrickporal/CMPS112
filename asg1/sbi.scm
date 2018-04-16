@@ -88,7 +88,7 @@
 (define (write-program-by-line filename program)
     (map 
     	(lambda (line) 
-    		(parse_line  line) 
+    		(parse_line  (car line)) 
     	)  
     program)
 )
