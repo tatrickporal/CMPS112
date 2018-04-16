@@ -79,8 +79,8 @@
 
 
 (define (parse_line line)
-	(when(not(equal? line '()))
-		(printf "~s~n" (cddr line))
+	(when(equal? (cdr line) '())
+		(printf "~s~n" line)
 	)	
 )
 
