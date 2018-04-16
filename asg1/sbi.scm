@@ -88,10 +88,6 @@
 (define (decifer line)
 	(when(not(null? line))
 		(printf "~s~n" (cdr line))
-		(cond
-			((number? (car line)) (printf "~s~n" car line)) 
-		)
-
 	)
 )
 
@@ -99,7 +95,7 @@
     (map 
     	(lambda (line) 
     		(decifer line)
-    	(printf "HAS BEGUN~n" line)  ) 
+    	) 
     program)
 )
     
