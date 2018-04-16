@@ -39,7 +39,7 @@
                   (close-input-port inputfile)
              		program) ))
 )
-
+;; object tests
 (define tests `(
    (,boolean?   boolean?)
    (,char?      char?)
@@ -57,11 +57,13 @@
    (,vector?    vector?)
 ))
 
+;;display lists and their values
 (define (show label it)
     (display it)
     (newline)
 )
 
+;;hashtables of functions
 (define ht (make-hash))
 (for-each
     (lambda (item) (hash-set! ht (car item) (cadr item)))
@@ -75,9 +77,10 @@
      )
 )
 
+
 (define (decifer line)
 	(when(not(null? line))
-		(decifer (cdr line) )
+		(printf "~s~n" (cdr line) )
 	)
 )
 
