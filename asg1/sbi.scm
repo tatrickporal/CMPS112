@@ -78,8 +78,8 @@
 (define (decifer line)
 	(when(not(null? line))
 		( printf "This has been changed ~s~n"  line)
-		(decifer (cdr line) )
-	)
+		
+	)(decifer (cdr line) )
 )
 
 (define (write-program-by-line filename program)
