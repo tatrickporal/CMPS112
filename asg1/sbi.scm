@@ -84,7 +84,7 @@
 
 (define (parse_line line)
 	(when(not(null? line))
-		(decifer line)
+		(decifer (car line))
 	)	
 )
 
