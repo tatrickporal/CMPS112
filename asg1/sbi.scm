@@ -76,7 +76,7 @@
 )
 
 (define (decifer line)
-	(when(not(null? line))
+	(when(not(null? (car line))
 		(printf "Line being looked at ~s~n" line)
 	)
 	(when(null? (car line))
