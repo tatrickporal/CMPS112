@@ -86,9 +86,12 @@
 (define (decifer line)
 	(when (not(null? line))
 		(cond 
-			(pair? line)
+			((pair? line) (printf "~s~n" line)
+			(else printf "this please")
+			)
+
 		)
-		(printf "~s~n" line)
+		
 	)
 )
 
