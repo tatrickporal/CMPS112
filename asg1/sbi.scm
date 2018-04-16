@@ -85,7 +85,7 @@
 
 (define (decifer line)
 	(cond 
-		(not(null? (caaar line)) (printf " ~s~n" (caar line)))
+		(not(null? (car temp)) (printf " ~s~n" (caar line)))
 		(else (printf "this please"))
 	)	
 )
@@ -93,7 +93,7 @@
 (define (write-program-by-line filename program)
     (map 
     	(lambda (line) 
-    		(decifer  (cdr line))
+    		(decifer  (cadr line))
     	)  
     program)
 )
