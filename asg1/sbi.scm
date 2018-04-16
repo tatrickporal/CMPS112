@@ -87,7 +87,7 @@
 
 (define (decifer line)
 	(when(not(null? line))
-		(printf "~s~n" (cadr line))
+		(printf "~s~n" (cdar line))
 	)
 )
 
