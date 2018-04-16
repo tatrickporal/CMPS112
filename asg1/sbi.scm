@@ -76,12 +76,10 @@
 )
 
 (define (decifer line)
-	(when(not(null? (car line)))
+	(when(not(null? line))
 		(printf "Line being looked at ~s~n" line)
 	)
-	(when(null? (car line))
-		(printf "Ya done son~n")
-	)	
+	(else (printf "done son~n"))	
 )
 
 
