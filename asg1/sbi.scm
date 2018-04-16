@@ -79,7 +79,7 @@
 
 
 (define (parse_line line)
-	(set! (acting_command (car line) ) )
+	(set! acting_command (car line) )
 	(printf "~s~n" (acting_command))
 	
 )
