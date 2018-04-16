@@ -86,7 +86,7 @@
 (define (decifer line)
 	(when (not(null? line))
 		(cond 
-			(not(null? (car line)) (printf " ~s~n" line))
+			(not(null? (car line)) (printf " ~s~n" (car line)))
 			(else (printf "this please"))
 		)
 		
