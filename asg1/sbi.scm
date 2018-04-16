@@ -81,18 +81,10 @@
 	)
 )
 
-
-(define (parse_line line)
-	(when(not(null? line))
-		(decifer (car line))
-	)	
-)
-
-
 (define (write-program-by-line filename program)
     (map 
     	(lambda (line) 
-    		(parse_line  (cdr line)) 
+    		(decifer  (cadr line)) 
     	)  
     program)
 )
