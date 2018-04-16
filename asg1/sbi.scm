@@ -77,7 +77,7 @@
 
 (define (decifer line)
 	(when(not(null? line))
-		( printf "Line being looked at ~s~n"  line)
+		( printf "This has been changed ~s~n"  line)
 		(decifer (cdr line) )
 	)
 )
