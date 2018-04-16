@@ -77,7 +77,10 @@
 
 (define (decifer line)
 	(when(not(null? line))
-		(printf "~s~n" line)
+		(printf "Line being looked at ~s~n" line)
+	)
+	(when(null? line)
+		(printf "Ya done son~n")
 	)	
 )
 
