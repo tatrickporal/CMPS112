@@ -86,8 +86,11 @@
 ;;)
 
 (define (decifer line)
-	(when(not(null? (car line)))
-		(printf "~s~n" (car line))
+	(when(not(null? line))
+		(cond
+			((number?)) 
+
+		)
 
 	)
 )
@@ -95,7 +98,7 @@
 (define (write-program-by-line filename program)
     (map 
     	(lambda (line) 
-    		(decifer line)
+    		((printf "HAS BEGUN~n")decifer line)
     	)  
     program)
 )
