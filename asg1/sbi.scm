@@ -85,7 +85,7 @@
 
 (define (decifer line)
 	(cond 
-		(not(null?  line) (printf " ~s~n" line))
+		(not(null?  (cdr line)) (printf " ~s~n" (cdr line)))
 		(else (printf "this please"))
 	)	
 )
