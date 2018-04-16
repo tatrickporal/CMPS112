@@ -64,9 +64,14 @@
 )
 
 ;;hashtables of functions
-(define ht (make-hash))
+
+
+(define label (make-hash))
+(define functions (make-hash))
+(define variables (make-hash))
+
 (for-each
-    (lambda (item) (hash-set! ht (car item) (cadr item)))
+    (lambda (item) (hash-set! functions (car item) (cadr item)))
     `(
    	  (print, (lambda (message) (printf "~s~n" message)))
       (+ ,(lambda (x y) (+ x y)))
@@ -79,16 +84,15 @@
 
 
 (define (decifer line)
-	(when(not(null? line))
-		(let  ((command (car line))))
-		(printf "~s~n" command )
+	(when (not(null? line))
+		(print "~s~n" line)
 	)
 )
 
 (define (write-program-by-line filename program)
     (map 
     	(lambda (line) 
-    		(decifer  (cdr line)) 
+    		(decifer line) 
     	)  
     program)
 )
