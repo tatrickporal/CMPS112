@@ -99,7 +99,7 @@
     (map 
     	(lambda (line) 
     		(decifer line)
-    	(printf "HAS BEGUN~n")  ) 
+    	(printf "HAS BEGUN~n" line)  ) 
     program)
 )
     
