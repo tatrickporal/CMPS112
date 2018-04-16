@@ -82,10 +82,12 @@
      )
 )
 
+(define (execute )
+)
 
 (define (decifer line)
-	(when(not(null? (car line)))
-		(printf "~s~n" (car line))
+	(when(not(null? (cdr line)))
+		(printf "~s~n" (cdr line))
 
 	)
 )
