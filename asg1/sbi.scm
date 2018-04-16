@@ -83,7 +83,7 @@
 
 (define (parse_line line)
 	(when (not (null? line))
-		  (parse_command (cdr line))
+		  (parse_command  line)
 		  ;;(parse_arguments (car line))
 		(when (null? line)	  
 		  (printf "whaddup then?~n")
