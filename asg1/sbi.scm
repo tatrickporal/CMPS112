@@ -71,14 +71,15 @@
       (- ,(lambda (x y) (- x y)))
       (* ,(lambda (x y) (* x y)))
       ;;(let,(lambda (var_name x) (let var_name x)))
-      (vec ,(make-vector 10 0.0)))
+      (vec ,(make-vector 10 0.0))
+     )
 )
 
 
 
 
 (define (parse_line line)
-	(let (acting_command (car line)))
+	(set! (acting_command (car line) )
 	(printf "~s~n" (car line))
 	
 )
