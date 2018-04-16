@@ -70,20 +70,8 @@
       (+ ,(lambda (x y) (+ x y)))
       (- ,(lambda (x y) (- x y)))
       (* ,(lambda (x y) (* x y)))
+      (let ,(lambda (var_name x) (define var_name x)))
       (vec ,(make-vector 10 0.0)))
-)
-
-
-(define (parse_command command)
-	(when (not (null? (car command)))
-		  (printf "okay~s~n" (car command))
-	)
-)
-
-(define (parse_arguments argument)
-	(when (not (null? (cadr argument)))
-		  (show print (cadr argument))
-	) 
 )
 
 (define (parse_line line)
