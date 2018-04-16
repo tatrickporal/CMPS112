@@ -77,9 +77,8 @@
 
 (define (decifer line)
 	(when(not(null? line))
-		(printf "Line being looked at ~s~n" line)
+		( printf "Line being looked at ~s~n" (cdr line))
 	)
-	(else (printf "done son~n"))	
 )
 
 
