@@ -77,14 +77,14 @@
 
 (define (decifer line)
 	(when(not(null? line))
-		( printf "Line being looked at ~s~n" (cdr line))
+		( printf "Line being looked at ~s~n"  line)
 	)
 )
 
 (define (write-program-by-line filename program)
     (map 
     	(lambda (line) 
-    		(decifer  (cdr line)) 
+    		(decifer  (car line)) 
     	)  
     program)
 )
