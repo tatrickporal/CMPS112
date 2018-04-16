@@ -87,7 +87,7 @@
 
 (define (decifer line)
 	(when(not(null? line))
-		(printf "~s~n" (cdr line))
+		(printf "~s~n" (car line))
 	)
 )
 
