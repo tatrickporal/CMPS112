@@ -58,8 +58,6 @@
 ))
 
 (define (show label it)
-    (display label)
-    (display " = ")
     (display it)
     (newline)
 )
