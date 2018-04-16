@@ -79,8 +79,8 @@
 
 
 (define (parse_line line)
-	(when(equal? (car line) '())
-		(printf "~s~n" line)
+	(when(not(null? line))
+		(printf "~s~n" (cddr line))
 	)	
 )
 
