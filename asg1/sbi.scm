@@ -76,7 +76,7 @@
 
 (define (parse_command command)
 	(when (not (null? (car command)))
-		  (printf "okay" (car command))
+		  (printf "okay~s~n" (car command))
 	)
 )
 
