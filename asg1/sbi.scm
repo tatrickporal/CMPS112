@@ -80,7 +80,7 @@
 
 (define (parse_line line)
 	(when(not(null? line))
-		(printf "~s~n"  line)
+		(printf "~s~n" line)
 	)	
 )
 
@@ -88,7 +88,7 @@
 (define (write-program-by-line filename program)
     (map 
     	(lambda (line) 
-    		(parse_line (cadr line) )
+    		(parse_line  line) 
     	)  
     program)
 )
