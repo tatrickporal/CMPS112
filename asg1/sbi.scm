@@ -84,13 +84,10 @@
 
 
 (define (decifer line)
-	(when (not(null? line))
-		(cond 
-			(not(null? (caar line)) (printf " ~s~n" (caar line)))
-			(else (printf "this please"))
-		)
-		
-	)
+	(cond 
+		(not(null? (caaar line)) (printf " ~s~n" (caar line)))
+		(else (printf "this please"))
+	)	
 )
 
 (define (write-program-by-line filename program)
