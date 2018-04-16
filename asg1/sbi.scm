@@ -95,7 +95,7 @@
 (define (write-program-by-line filename program)
     (map 
     	(lambda (line) 
-    		(parse_line  (cdr line ))
+    		(parse_line line )
     	)  
     program)
 )
