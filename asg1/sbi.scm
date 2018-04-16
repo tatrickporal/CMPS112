@@ -87,7 +87,7 @@
 	(when (not(null? line))
 		(cond 
 			((pair? line) (printf "~s~n" line)
-			(else printf "this please")
+			(else (printf "this please"))
 			)
 
 		)
