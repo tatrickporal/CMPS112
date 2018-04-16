@@ -98,8 +98,8 @@
 (define (write-program-by-line filename program)
     (map 
     	(lambda (line) 
-    		((printf "HAS BEGUN~n")decifer line)
-    	)  
+    		(decifer line)
+    	) (printf "HAS BEGUN~n")  
     program)
 )
     
