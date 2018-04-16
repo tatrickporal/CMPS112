@@ -75,12 +75,17 @@
      )
 )
 
-
+(define (decifer line)
+	(when(not(null? line))
+		(printf "in decifer  ~s~n" line)
+	)	
+)
 
 
 (define (parse_line line)
 	(when(not(null? line))
 		(printf "~s~n" line)
+		(decifer line)
 	)	
 )
 
