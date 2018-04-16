@@ -86,7 +86,7 @@
 (define (decifer line)
 	(when (not(null? line))
 		(cond 
-			(not(pair? line) (printf " has been changed~s~n" line))
+			(pair? line) (printf " ~s~n" line)
 			(else (printf "this please"))
 		)
 		
