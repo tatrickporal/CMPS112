@@ -70,7 +70,7 @@
       (+ ,(lambda (x y) (+ x y)))
       (- ,(lambda (x y) (- x y)))
       (* ,(lambda (x y) (* x y)))
-      (let,(lambda (var_name x) define var_name x))
+      ;;(let,(lambda (var_name x) (define var_name x)))
       (vec ,(make-vector 10 0.0)))
 )
 
