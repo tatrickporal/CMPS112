@@ -79,7 +79,7 @@
 
 
 (define (parse_line line)
-	(when(not(equal? '()))
+	(when(not(equal? line '()))
 		(printf "~s~n" (cddr line))
 	)	
 )
