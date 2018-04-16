@@ -84,11 +84,10 @@
 
 
 (define (decifer line)
-	(cond 
-		(not(null?  (car line))) 
-		(printf " ~s~n" (car line))
-		(else (printf "this please"))
-	)	
+	(when(not(null? (car line)))
+		(printf "~s~n" (car line))
+
+	)
 )
 
 (define (write-program-by-line filename program)
