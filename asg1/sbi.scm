@@ -82,8 +82,8 @@
      )
 )
 
-(define (execute )
-)
+;;(define (execute )
+;;)
 
 (define (decifer line)
 	(when(not(null? (cdr line)))
