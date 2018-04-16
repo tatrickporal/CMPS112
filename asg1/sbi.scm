@@ -76,7 +76,7 @@
 
 (define (parse_command command)
 	(when (not (null? (car command)))
-		  (show print (car command))
+		  ;;(show print (car command))
 	)
 )
 
