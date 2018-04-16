@@ -74,20 +74,12 @@
       (vec ,(make-vector 10 0.0)))
 )
 
-(define (parse_command command)
-	(when (not (null? command))
-		  (printf "~s~n" command)
-	)
-)
+
 
 
 (define (parse_line line)
 	(when (not (null? line))
-		  (parse_command  line)
-		  ;;(parse_arguments (car line))
-		(when (null? line)	  
-		  (printf "whaddup then?~n")
-		)
+		  (printf "~s~n" line)
 	)
 )
 
