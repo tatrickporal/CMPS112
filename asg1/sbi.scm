@@ -70,14 +70,21 @@
       (+ ,(lambda (x y) (+ x y)))
       (- ,(lambda (x y) (- x y)))
       (* ,(lambda (x y) (* x y)))
-      ;;(let,(lambda (var_name x) (define var_name x)))
+      ;;(let,(lambda (var_name x) (let var_name x)))
       (vec ,(make-vector 10 0.0)))
 )
+
+(define (parse_command command)
+	(when (not (null? command))
+		  (printf "~s~n" command)
+	)
+)
+
 
 (define (parse_line line)
 	(when (not (null? line))
 		  (parse_command (car line))
-		  (parse_arguments (car line))
+		  ;;(parse_arguments (car line))
 		(when (null? line)	  
 		  (printf "whaddup then?~n")
 		)
