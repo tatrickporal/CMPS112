@@ -108,7 +108,7 @@
  		((eqv? command 'print)
  			(cond ((= 1 state_len) (printf "~n")) 
  				((= 2 state_len) 
- 					(printf "~s ~n" (cdr command))
+ 					(printf "~s ~n"  command)
  				)
  			)
  		)
