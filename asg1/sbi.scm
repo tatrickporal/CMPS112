@@ -112,6 +112,9 @@
 			((= 3 (length statement))
 				(printf "~s~n" (caddr statement) )
 			)
+			((pair? statement)
+				(printf "~s~n" (cadr statement) )
+			)
 
 		)
 
