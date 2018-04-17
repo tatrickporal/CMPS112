@@ -84,7 +84,7 @@
 
 (define (decifer_one command)
 	(cond
-		((string=? "print" command)
+		((string=? ("print") command)
 			(printf "~s~n" command)
 		)
 	)
