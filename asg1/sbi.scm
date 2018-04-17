@@ -100,8 +100,8 @@
 	)
 )
 
-(define (decode prgram)
-	(let ((command (caddr line)))
+(define (decode program)
+	(let ((command (caddr program)))
 	(printf "~s~n" command)
 	)
 )
