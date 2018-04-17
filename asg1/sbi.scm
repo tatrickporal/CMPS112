@@ -112,7 +112,7 @@
 			((= 3 (length statement))
 				(printf "a threesome ~s~n"  (caddr statement))
 			)
-			((pair? statement)
+			((= 2 (length statement))
 				(printf "a pair ~s~n"  (cdr statement)) 
 			)
 			((= 1 (length statement))
