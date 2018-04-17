@@ -44,7 +44,7 @@
 (define (write-program-by-line filename program)
 
     (map (lambda (line) 
-    		(decifer  (car line))
+    		(decifer  (cdr line))
     	) program)
     ;;(decode program)
 )
@@ -106,7 +106,7 @@
 	
  ;;(let (())
 	(when(not(null? line))
-		(printf "~s~n" ( cdr line))
+		(printf "~s~n" ( car line))
 		(cond ((symbol? (car line)) (hash-set! (cadr line) line))
 			(printf "~s~n" line)
 		)
