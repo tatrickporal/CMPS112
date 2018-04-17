@@ -110,7 +110,7 @@
 		
 		(cond ((symbol? (car line)) (hash-set! (cadr line) line)) ;; if label put into label-table
 			((= 3 (length statement))
-				(printf "~s~n" statement )
+				(printf "~s~n" (caddr statement) )
 			)
 
 		)
