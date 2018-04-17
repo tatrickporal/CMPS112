@@ -136,12 +136,6 @@
 )
 
 
-(define (decode program)
-	(let ((command (caddr program)))
-	(printf "~s~n" command)
-	)
-)
-
 
 
 (main (vector->list (current-command-line-arguments)))
