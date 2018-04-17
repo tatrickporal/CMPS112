@@ -84,7 +84,7 @@
 
 (define (decifer_one command)
 	(cond
-		((procedure? (car command))
+		((not (procedure? (car command)))
 			(printf "~s is a string~n" (car command))
 		)
 	)
