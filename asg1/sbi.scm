@@ -43,9 +43,9 @@
 
 (define (write-program-by-line filename program)
 
-    (map (lambda (line) 
-    		(decifer line)
-    	) program)
+    ;;(map (lambda (line) 
+    	;;	(decifer line)
+    	;;) program)
     (decode program)
 )
 
