@@ -128,7 +128,7 @@
 				(printf "a three ~s ~s~n"  statement (length statement))
 			)
 			((= 2 (length statement))
-				(printf "a pair ~s ~s~n"  statement (length statement))
+				(decode (car statement) (length statement)) 
 			)
 			((= 1 (length statement))
 				;(decode (car statement))
