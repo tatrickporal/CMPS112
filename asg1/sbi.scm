@@ -118,10 +118,10 @@
 		
 		(cond ((symbol? (car line)) (hash-set! (cadr line) line)) ;; if label put into label-table
 			((= 3 (length statement))
-				(printf "a threesome ~s~n"  (caddr statement))
+				(printf "a three ~s ~s~n"  statement (length statement))
 			)
 			((= 2 (length statement))
-				(printf "a pair ~s~n"  (cdr statement)) 
+				(printf "a pair ~s ~s~n"  statement (length statement))
 			)
 			((= 1 (length statement))
 				;(decode (car statement))
