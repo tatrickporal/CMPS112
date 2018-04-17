@@ -88,11 +88,11 @@
 (define (decifer line)
 	(when(not(null? line))
 		(printf "what ~s ~s ~n" (length  line) line)
-		(cond 
-			((= 3 (length (car line)))
-				(printf "what ~s ~s ~n" (length (car line)) (car line))
-			)
-		)
+		;(cond 
+			;;((= 3 (length (car line)))
+			;	(printf "what ~s ~s ~n" (length (car line)) (car line))
+			;)
+		;)
 		
 	)
 )
