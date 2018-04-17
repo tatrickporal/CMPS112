@@ -101,7 +101,7 @@
      ))
 ;;End Custom Tables
 ( define (decode statement)
- (let (command (car statement))
+ (let ((command (car statement)))
  	(cond
  		((eqv? command 'print)
  			(printf "~s~n" (cdr command) )
