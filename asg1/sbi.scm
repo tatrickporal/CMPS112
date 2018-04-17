@@ -102,7 +102,7 @@
 ;;End Custom Tables
 ( define (decode statement state_len)
  (let ((command  statement))
- 	(printf "~s ~s ~n"  (cadr command) state_len)
+ 	(printf "~s ~s ~n"  (caadr command) state_len)
  	(cond
 
 
