@@ -82,13 +82,16 @@
      )
 )
 
-;;(define (execute )
-;;)
+(define (decifer_one command)
+	(printf "in decifer one ~s~n" command
+	)
+)
 
 (define (decifer line)
 	(when(not(null? line))
 		(cond ((symbol? (car line)) (printf "symbol ~s ~n" (car line)))	
 		 ((not(symbol? (car line)))
+		 	;;when not a symbol check to see argument length
 			(cond 
 				((= 3 (length (car line)))
 					(printf "~s full command = ~s ~n" (length (car line)) (car line))
@@ -97,9 +100,8 @@
 					(printf "~s full command = ~s ~n" (length (car line)) (car line))
 				)
 				((= 1 (length (car line)))
-					(printf "~s full command = ~s ~n" (length (car line)) (car line))
+					(decifer_one (car line))
 				)
-						
 			)
 		 )
 		)
