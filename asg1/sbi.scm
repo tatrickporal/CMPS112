@@ -107,10 +107,15 @@
  
  (when(not(null? line))
  	(let ((statement (car line)))
-		(printf "~s~n" statement )
-		(cond ((symbol? (car line)) (hash-set! (cadr line) line))
-			(printf "~s~n" line)
+		
+		(cond ((symbol? (car line)) (hash-set! (cadr line) line)) ;; if label put into label-table
+			((= 3 (length statement))
+				(printf "~s~n" statement )
+			)
+
 		)
+
+
 	)
  )
 )
