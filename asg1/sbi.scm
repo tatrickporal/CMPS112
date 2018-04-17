@@ -100,11 +100,11 @@
 
      ))
 ;;End Custom Tables
-
+;;( define (decode statement)
+;)
 
 (define (decifer line)
-	
- 
+
  (when(not(null? line))
  	(let ((statement (car line)))
 		
@@ -116,7 +116,7 @@
 				(printf "a pair ~s~n"  (cdr statement)) 
 			)
 			((= 1 (length statement))
-				(printf "single statement ~s~n" statement)
+				(printf "single statement ~s~n" (car statement))
 			)
 
 		)
