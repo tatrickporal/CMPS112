@@ -73,7 +73,7 @@
 (for-each
     (lambda (item) (hash-set! functions (car item) (cadr item)))
     `(
-   	  (print_null, (lambda (message) (printf "~n" message)))
+   	  (print, (lambda (message) (printf "~s" message)))
       (+ ,(lambda (x y) (+ x y)))
       (- ,(lambda (x y) (- x y)))
       (* ,(lambda (x y) (* x y)))
@@ -100,7 +100,7 @@
 					(printf "~s full command = ~s ~n" (length (car line)) (car line))
 				)
 				((= 2 (length (car line)))
-					(printf "~s full command = ~s ~n" (length (car line)) (car line))
+					(decifer_two (car line))
 				)
 				((= 1 (length (car line)))
 					(decifer_one (car line))
