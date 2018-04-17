@@ -107,6 +107,8 @@
 
 
  		((eqv? command 'print)
+ 			(display  (cadr command))
+ 					(newline)
  			(cond ((= 1 state_len) (printf "~n")) 
  				((= 2 state_len) 
  					(display  (cadr command))
