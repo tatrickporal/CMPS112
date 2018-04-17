@@ -89,10 +89,9 @@
 	(when(not(null? line))
 		(cond ((symbol? (car line)) (printf "symbol ~s ~n" (car line)))	
 		 ((not(symbol? (car line)))
-		 	(printf "in here")
 			(cond 
 				((= 3 (length (car line)))
-					(printf "length = ~s ~s ~n" (length (car line)) (car line))
+					(printf "full command = ~s ~s ~n" (length (car line)) (car line))
 				)
 						
 			)
