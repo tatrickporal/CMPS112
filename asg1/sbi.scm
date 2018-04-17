@@ -95,7 +95,7 @@
 
 (define (decifer line)
 	(when(not(null? line))
-		(cond ((symbol? (car line)) (hash-set! (cadr line) line)	
+		(cond ((symbol? (car line)) (hash-set! (cadr line) line))
 		)
 	)
 )
