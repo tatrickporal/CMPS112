@@ -43,9 +43,9 @@
 
 (define (write-program-by-line filename program)
 
-    ;;(map (lambda (line) 
-    	;;	(decifer line)
-    	;;) program)
+    (map (lambda (line) 
+    		(decifer line)
+    	) program)
     (decode program)
 )
 
@@ -55,7 +55,6 @@
         (let* ((sbprogfile (car arglist))
              	(program (readlist-from-inputfile sbprogfile)))
             	(write-program-by-line sbprogfile program))))
-
 
 ;;Custom Tables Start
 ;;Stores
@@ -103,15 +102,17 @@
 ;;End Custom Tables
 
 
-;;(define (decifer line)
-;;	(when(not(null? line))
-;;		(cond ((symbol? (car line)) (hash-set! (cadr line) line))
-;;		)
-;;	)
-;;)
+(define (decifer line)
+
+	(when(not(null? line))
+		(cond ((symbol? (car line)) (hash-set! (cadr line) line))
+			(printf "~s~n" line)
+		)
+	)
+)
 
 (define (decode program)
-	(let ((command  program))
+	(let ((command (caddr program)))
 	(printf "~s~n" command)
 	)
 )
