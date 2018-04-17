@@ -101,7 +101,7 @@
      ))
 ;;End Custom Tables
 ( define (decode statement state_len)
- (let ((command  statement))
+ (let ((command  (car statement) ))
 
  	(cond
 
@@ -136,7 +136,7 @@
 			)
 			((= 1 (length statement))
 				;(decode (car statement))
-				(decode (car statement) (length statement)) 
+				(decode  statement (length statement)) 
 			)
 
 		)
