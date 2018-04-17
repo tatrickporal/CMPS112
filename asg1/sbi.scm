@@ -92,7 +92,7 @@
 		 	(printf "in here")
 			(cond 
 				((= 3 (length (car line)))
-					(printf "length three and not symbol ~s ~s ~n" (length (car line)) (car line))
+					(printf "length = ~s ~s ~n" (length (car line)) (car line))
 				)
 						
 			)
