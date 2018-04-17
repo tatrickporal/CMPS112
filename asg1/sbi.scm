@@ -102,9 +102,7 @@
 ;;End Custom Tables
 ( define (decode statement state_len)
  (let ((command  (car statement) ))
-
  	(cond
-
 
  		((eqv? command 'print)
  			(cond ((= 1 state_len) (printf "~n")) 
@@ -113,12 +111,11 @@
  					(newline)
  				)
  				((= 3 state_len) 
- 					(display (cadr statement))
+ 					(display (cdar statement) )
  					(newline)
  				)
  			)
  		)
-
 
  	)
  )
