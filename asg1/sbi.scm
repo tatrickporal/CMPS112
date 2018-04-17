@@ -109,7 +109,7 @@
  		((eqv? command 'print)
  			(cond ((= 1 state_len) (printf "~n")) 
  				((= 2 state_len) 
- 					(display    statement)
+ 					(display    (car statement))
  					(newline)
  				)
  			)
