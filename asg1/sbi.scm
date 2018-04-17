@@ -93,6 +93,12 @@
 				((= 3 (length (car line)))
 					(printf "~s full command = ~s ~n" (length (car line)) (car line))
 				)
+				((= 2 (length (car line)))
+					(printf "~s full command = ~s ~n" (length (car line)) (car line))
+				)
+				((= 1 (length (car line)))
+					(printf "~s full command = ~s ~n" (length (car line)) (car line))
+				)
 						
 			)
 		 )
