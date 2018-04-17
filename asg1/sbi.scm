@@ -113,7 +113,7 @@
 				(printf "~s~n"  statement) 
 			)
 			((pair? statement)
-				(printf "~s~n"  statement) 
+				(printf " a pair ~s~n"  statement) 
 			)
 
 		)
