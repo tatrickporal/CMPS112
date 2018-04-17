@@ -113,7 +113,7 @@
  					(newline)
  				)
  				((= 3 state_len) 
- 					(display (cdr statement))
+ 					(display (cadr statement))
  					(newline)
  				)
  			)
