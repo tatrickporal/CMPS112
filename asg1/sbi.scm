@@ -102,12 +102,18 @@
 ;;End Custom Tables
 ( define (decode statement state_len)
  (let ((command  statement))
- 	(printf "~s~n" command)
  	(cond
- 		((eqv? command 'print)
 
- 			(printf "~s ~s~n" command state_len) 
+
+ 		((eqv? command 'print)
+ 			(cond ((= 1 state_len) (printf "~n")) 
+ 				((= 2 state_len) 
+ 					(printf "~s~n" (cdr command))
+ 				)
+ 			)
  		)
+
+
  	)
  )
 )
