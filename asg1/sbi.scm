@@ -115,6 +115,9 @@
 			((pair? statement)
 				(printf "a pair ~s~n"  (cdr statement)) 
 			)
+			((= 1 (length statement))
+				(printf "single statement ~s~n" statement)
+			)
 
 		)
 
