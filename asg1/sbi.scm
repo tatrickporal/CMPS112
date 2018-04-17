@@ -101,7 +101,8 @@
      ))
 ;;End Custom Tables
 ( define (decode statement)
- (let ((command (car statement)))
+ (let ((command  statement))
+ 	(printf "~s~n" command)
  	(cond
  		((eqv? command 'print)
  			(printf "~s~n" (cdr command) )
@@ -123,7 +124,7 @@
 				(printf "a pair ~s~n"  (cdr statement)) 
 			)
 			((= 1 (length statement))
-				(printf "single statement ~s~n" (car statement))
+				(decode (car statement))
 			)
 
 		)
