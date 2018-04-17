@@ -109,7 +109,11 @@
  		((eqv? command 'print)
  			(cond ((= 1 state_len) (printf "~n")) 
  				((= 2 state_len) 
- 					(display    (cadr statement))
+ 					(display (cadr statement))
+ 					(newline)
+ 				)
+ 				((= 3 state_len) 
+ 					(display statement)
  					(newline)
  				)
  			)
@@ -127,18 +131,15 @@
 		
 		(cond ((symbol? (car line)) (hash-set! (cadr line) line)) ;; if label put into label-table
 			((= 3 (length statement))
-				(printf "a three ~s ~s~n"  statement (length statement))
+				(decode  statement (length statement))
 			)
 			((= 2 (length statement))
 				(decode  statement (length statement)) 
 			)
 			((= 1 (length statement))
-				;(decode (car statement))
 				(decode  statement (length statement)) 
 			)
-
 		)
-
 
 	)
  )
