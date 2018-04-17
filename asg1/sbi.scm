@@ -111,7 +111,7 @@
  					(newline)
  				)
  				((= 3 state_len) 
- 					(display (cdar statement) )
+ 					(display statement) 
  					(newline)
  				)
  			)
