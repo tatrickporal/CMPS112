@@ -104,14 +104,15 @@
 
 (define (decifer line)
 	
- ;;(let (())
-	(when(not(null? line))
-		(printf "~s~n" ( car line))
+ 
+ (when(not(null? line))
+ 	(let (statement (car line))
+		(printf "~s~n" statement )
 		(cond ((symbol? (car line)) (hash-set! (cadr line) line))
 			(printf "~s~n" line)
 		)
 	)
- ;)
+ )
 )
 
 
