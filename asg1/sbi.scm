@@ -100,8 +100,15 @@
 
      ))
 ;;End Custom Tables
-;;( define (decode statement)
-;)
+( define (decode statement)
+ (let (command (car statement))
+ 	(cond
+ 		((eqv? command 'print)
+ 			(printf "~s~n" (cdr command) )
+ 		)
+ 	)
+ )
+)
 
 (define (decifer line)
 
