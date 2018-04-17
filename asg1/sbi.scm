@@ -106,7 +106,7 @@
 	
  ;;(let (())
 	(when(not(null? line))
-		(printf "~s~n" ( cdr line))
+		(printf "~s~n" ( cddr line))
 		(cond ((symbol? (car line)) (hash-set! (cadr line) line))
 			(printf "~s~n" line)
 		)
