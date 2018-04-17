@@ -109,7 +109,7 @@
  		((eqv? command 'print)
  			(cond ((= 1 state_len) (printf "~n")) 
  				((= 2 state_len) 
- 					(display  (cdr command))
+ 					(display   command)
  					(newline)
  				)
  			)
