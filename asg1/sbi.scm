@@ -124,7 +124,8 @@
 				(printf "a pair ~s~n"  (cdr statement)) 
 			)
 			((= 1 (length statement))
-				(decode (car statement))
+				;(decode (car statement))
+				(printf "a pair ~s~n"  (car statement)) 
 			)
 
 		)
