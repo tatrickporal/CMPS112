@@ -42,6 +42,7 @@
 
 
 (define (write-program-by-line filename program)
+
     (map (lambda (line) 
     		(decifer line)
     	) program)
@@ -56,17 +57,26 @@
             	(write-program-by-line sbprogfile program))))
 
 
-;;initializing all needed variables
+;;Custom Tables Start
+;;Stores
 (define *label-table* (make-hash))
-(define *function-table* (make-hash))
-(define *variable-table* (make-hash))
+
+;;Stores variables defined in SBIR files
+(define *var-table* (make-hash))
+(for-each
+    (lambda (element) 
+        (hash-set! *var-table* (car element) (cadr element)))
+    `( 
+       (e 2.718281828459045235360287471352662497757247093)
+       (pi 3.141592653589793238462643383279502884197169399)
+     )
+)
 
 (define *function-table* (make-hash))
 (define (symbol-get key)
         (hash-ref *function-table* key))
 (define (symbol-put! key value)
         (hash-set! *function-table* key value))
-
 (for-each
     (lambda (pair)
             (symbol-put! (car pair) (cadr pair)))
@@ -90,15 +100,15 @@
         (sqrt    ,sqrt)
 
      ))
+;;End Custom Tables
 
 
-
-(define (decifer line)
-	(when(not(null? line))
-		(cond ((symbol? (car line)) (hash-set! (cadr line) line))
-		)
-	)
-)
+;;(define (decifer line)
+;;	(when(not(null? line))
+;;		(cond ((symbol? (car line)) (hash-set! (cadr line) line))
+;;		)
+;;	)
+;;)
 
 (define (decode program)
 	(let ((command (caddr program)))
