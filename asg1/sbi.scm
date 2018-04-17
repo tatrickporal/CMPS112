@@ -84,8 +84,8 @@
 
 (define (decifer_one command)
 	(cond
-		((equal? "print" command)
-			(printf "~s~n" command)
+		((not(string? command))
+			(printf "~s is not a string~n" command)
 		)
 	)
 )
