@@ -111,7 +111,7 @@
 ;;)
 
 (define (decode program)
-	(let ((command (caddr program)))
+	(let ((command ( program)))
 	(printf "~s~n" command)
 	)
 )
