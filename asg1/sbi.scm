@@ -39,91 +39,14 @@
                   (close-input-port inputfile)
              		program) ))
 )
-;; object tests
-(define tests `(
-   (,boolean?   boolean?)
-   (,char?      char?)
-   (,complex?   complex?)
-   (,integer?   integer?)
-   (,list?      list?)
-   (,number?    number?)
-   (,pair?      pair?)
-   (,path?      path?)
-   (,procedure? procedure?)
-   (,rational?  rational?)
-   (,real?      real?)
-   (,string?    string?)
-   (,symbol?    symbol?)
-   (,vector?    vector?)
-))
 
-;;display lists and their values
-(define (show label it)
-    (display it)
-    (newline)
-)
-
-;;hashtables of functions
-
-
-(define label (make-hash))
-(define functions (make-hash))
-(define variables (make-hash))
-
-(for-each
-    (lambda (item) (hash-set! functions (car item) (cadr item)))
-    `(
-   	  (print, (lambda (message) (printf "~s" message)))
-      (+ ,(lambda (x y) (+ x y)))
-      (- ,(lambda (x y) (- x y)))
-      (* ,(lambda (x y) (* x y)))
-      ;;(let,(lambda (var_name x) (let var_name x)))
-      (vec ,(make-vector 10 0.0))
-     )
-)
-
-(define (decifer_one command)
-	(cond
-		((not (procedure? (car command)))
-			(printf "~s is a string~n" (car command))
-		)
-	)
-)
-
-(define (decifer line)
-	(when(not(null? line))
-		(cond ((symbol? (car line)) (printf "symbol ~s ~n" (car line)))	
-		 ((not(symbol? (car line)))
-		 	;;when not a symbol check to see argument length
-			(cond 
-				((= 3 (length (car line)))
-					(printf "~s full command = ~s ~n" (length (car line)) (car line))
-				)
-				((= 2 (length (car line)))
-					(decifer_two (car line))
-				)
-				((= 1 (length (car line)))
-					(decifer_one (car line))
-				)
-			)
-		 )
-		)
-	)
-)
 
 (define (write-program-by-line filename program)
-    (map 
-    	(lambda (line) 
-    		(decifer (cdr line))
-    	) 
-    program)
+    (map (lambda (line) 
+    		(decifer line)
+    	) program)
+    (decode program)
 )
-    
-(define (what-kind value)
-    (cond ((real? value) 'real)
-          ((vector? value) 'vector)
-          ((procedure? value) 'procedure)
-          (else 'other)))
 
 (define (main arglist)
     (if (or (null? arglist) (not (null? (cdr arglist))))
@@ -131,5 +54,52 @@
         (let* ((sbprogfile (car arglist))
              	(program (readlist-from-inputfile sbprogfile)))
             	(write-program-by-line sbprogfile program))))
-		
+
+
+;;initializing all needed variables
+(define *label-table* (make-hash))
+(define *function-table* (make-hash))
+(define *variable-table* (make-hash))
+
+(define *function-table* (make-hash))
+(define (symbol-get key)
+        (hash-ref *function-table* key))
+(define (symbol-put! key value)
+        (hash-set! *function-table* key value))
+
+(for-each
+    (lambda (pair)
+            (symbol-put! (car pair) (cadr pair)))
+    `(
+
+        (log10_2 0.301029995663981195213738894724493026768189881)
+        (sqrt_2  1.414213562373095048801688724209698078569671875)
+        (e       2.718281828459045235360287471352662497757247093)
+        (pi      3.141592653589793238462643383279502884197169399)
+        (div     ,(lambda (x y) (floor (/ x y))))
+        (log10   ,(lambda (x) (/ (log x) (log 10.0))))
+        (mod     ,(lambda (x y) (- x (* (div x y) y))))
+        (quot    ,(lambda (x y) (truncate (/ x y))))
+        (rem     ,(lambda (x y) (- x (* (quot x y) y))))
+        (+       ,+)
+        (^       ,expt)
+        (ceil    ,ceiling)
+        (exp     ,exp)
+        (floor   ,floor)
+        (log     ,log)
+        (sqrt    ,sqrt)
+
+     ))
+
+
+
+(define (decifer line)
+	(when(not(null? line))
+		(cond ((symbol? (car line)) (hash-set! (cadr line) line)	
+		)
+	)
+)
+
+
+
 (main (vector->list (current-command-line-arguments)))
