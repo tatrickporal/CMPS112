@@ -91,7 +91,7 @@
 		 ((not(symbol? (car line)))
 			(cond 
 				((= 3 (length (car line)))
-					(printf "full command = ~s ~s ~n" (length (car line)) (car line))
+					(printf "~s full command = ~s ~n" (length (car line)) (car line))
 				)
 						
 			)
