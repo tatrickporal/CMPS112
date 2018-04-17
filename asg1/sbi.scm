@@ -102,6 +102,7 @@
 ;;End Custom Tables
 ( define (decode statement state_len)
  (let ((command  statement))
+ 	(printf "~s ~s ~n"  (cdr command) state_len)
  	(cond
 
 
