@@ -46,7 +46,7 @@
     (map (lambda (line) 
     		(decifer (cdr line))
     	) program)
-    (decode program)
+    ;;(decode program)
 )
 
 (define (main arglist)
