@@ -91,8 +91,8 @@
 			
 			((not(symbol? (car line)))
 				(cond 
-					(= 3 (length (car line)))
-						(printf "length three and not symbol ~s ~s ~n" (length (car line)) (car line))
+					(= 3 (length (car line)) (printf "length three and not symbol ~s ~s ~n" (length (car line)) (car line)))
+						
 				)
 			)
 		)
