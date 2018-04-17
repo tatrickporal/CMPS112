@@ -100,6 +100,11 @@
 	)
 )
 
+(define (decode prgram)
+	(let ((command (caddr line)))
+	(printf "~s~n" command)
+)
+
 
 
 (main (vector->list (current-command-line-arguments)))
