@@ -105,7 +105,7 @@
  	(printf "~s~n" command)
  	(cond
  		((eqv? command 'print)
- 			(printf "~s~n" (cdr command) )
+ 			(printf "~s~n" command) 
  		)
  	)
  )
@@ -125,7 +125,7 @@
 			)
 			((= 1 (length statement))
 				;(decode (car statement))
-				(printf "a pair ~s~n"  (car statement)) 
+				(decode (car statement)) 
 			)
 
 		)
