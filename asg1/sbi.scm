@@ -103,13 +103,16 @@
 
 
 (define (decifer line)
-	(printf "~s~n" line)
+	(printf "~s~n" ( caar line))
+ ;;(let (())
 	(when(not(null? line))
 		(cond ((symbol? (car line)) (hash-set! (cadr line) line))
 			(printf "~s~n" line)
 		)
 	)
+ ;)
 )
+
 
 (define (decode program)
 	(let ((command (caddr program)))
