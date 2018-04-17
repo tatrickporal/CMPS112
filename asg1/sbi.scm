@@ -73,7 +73,7 @@
 (for-each
     (lambda (item) (hash-set! functions (car item) (cadr item)))
     `(
-   	  (print, (lambda (message) (printf "~s~n" message)))
+   	  (print_null, (lambda (message) (printf "~n" message)))
       (+ ,(lambda (x y) (+ x y)))
       (- ,(lambda (x y) (- x y)))
       (* ,(lambda (x y) (* x y)))
@@ -83,7 +83,10 @@
 )
 
 (define (decifer_one command)
-	(printf "in decifer one ~s~n" command
+	(cond
+		((string=? "print" command)
+			(printf "~s~n" command)
+		)
 	)
 )
 
