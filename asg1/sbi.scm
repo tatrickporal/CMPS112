@@ -110,7 +110,7 @@
 			((pair? (list (car decode)))
 				(let ((operator (car execute)))
 					(printf " ~s~n" (caddr execute)  )
-					(printf " ~s~n" ( (symbol-get operator) (cdar execute) (cdaar execute) ) )
+					(printf " ~s~n" ( (symbol-get operator) (cadr execute) (caddr execute) ) )
 				)
 			)
 
