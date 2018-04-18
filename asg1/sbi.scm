@@ -115,7 +115,7 @@
 					( cond
 						(number?(cadr execute)
 							;(printf " ~s" ( (symbol-get operator) (cadr execute) (caddr execute) ) )
-							(printf " ~s" (cadr execute) )
+							(printf " ~s" (length (cadr execute)) )
 						)
 					)
 				)
