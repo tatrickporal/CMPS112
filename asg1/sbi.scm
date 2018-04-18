@@ -108,7 +108,7 @@
 				(printf "~s~n" decode)
 			)
 			((pair? (list (cdr decode)))
-				(printf "~s~n" decode)
+				(printf "~s~n" (cdr decode) )
 			)
 
 		
