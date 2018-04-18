@@ -111,11 +111,13 @@
 			
 			((pair? (list math))
 				(let ((operator (car math)))
+					
 					( cond
 						((list? (cadr math))
 							(cond 
 								((list? (caddr math))
-									(printf " ~s" ((symbol-get operator) (list(execute(cadr math))) (list(execute(caddr math)))) )
+									(execute (list(cadr math)))
+									(execute (list(caddr math)))
 								)
 							)
 						)
