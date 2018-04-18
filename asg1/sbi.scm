@@ -118,9 +118,9 @@
  			)
  		)
 
- 		((procedure? command)
+ 		((procedure? (car command))
  			(cond 
- 				(printf " this ~s~n" command)
+ 				(printf " this ~s~n" (car command))
  			)
  		)
 
