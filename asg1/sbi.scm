@@ -101,8 +101,8 @@
      ))
 ;;End Custom Tables
 
-(define (execute argument)
-	(printf "~s~n" argument)
+(define (execute decode)
+	(printf "~s~n" decode)
 )
 
 ( define (decode statement state_len)
