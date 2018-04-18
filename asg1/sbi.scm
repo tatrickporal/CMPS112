@@ -108,8 +108,8 @@
 				(printf "length 1 ~s~n" (car decode) )
 			)
 			((pair? (list (car decode)))
-				(let ((equation (car execute)))
-					(printf "equation ~s~n" equation)
+				(let ((operator (car execute)))
+					(printf " ~s~n" (hash-ref *function-table* operator (cdr execute)) )
 				)
 			)
 
