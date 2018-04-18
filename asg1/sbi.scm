@@ -113,7 +113,7 @@
 			((pair? (list (car decode)))
 				(let ((operator (car execute)))
 					( cond
-						(number?(cadr execute)
+						(list?(cadr execute)
 							;(printf " ~s" ( (symbol-get operator) (cadr execute) (caddr execute) ) )
 							(printf " ~s" (length (cadr execute)) )
 						)
