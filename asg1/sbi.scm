@@ -112,7 +112,7 @@
  				)
  				((= 3 state_len) 
  					(display (cadr statement))
- 					(display (decode (cddr statement)))
+ 					(display (decode (cddr statement) (length (cddr statement) )))
  					(newline)
  				)
  			)
