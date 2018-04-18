@@ -116,6 +116,7 @@
 						((list? (cadr math))
 							(cond 
 								((list? (caddr math))
+									(printf " ~s" ((symbol-get operator) (execute (list(cadr math))) (execute (list(caddr math))) ) )
 									(execute (list(cadr math)))
 									(execute (list(caddr math)))
 								)
