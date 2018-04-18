@@ -116,7 +116,8 @@
 						((list? (cadr math))
 							(cond 
 								((list? (caddr math))
-									(execute  (cadr math))
+									;(execute  (cadr math))
+									(printf "~s"  (cadr math))
 								)
 							)
 						)
