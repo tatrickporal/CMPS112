@@ -114,7 +114,7 @@
 				(let ((operator (car execute)))
 					(printf "~s" (length (cdr execute)))
 					( cond
-						(integer?(car execute)
+						(integer?(cadr execute)
 							(printf " ~s" ((symbol-get operator) (cadr execute) (caddr execute)) )
 						)
 					)
