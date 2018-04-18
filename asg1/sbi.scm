@@ -113,7 +113,7 @@
 			)
 			((pair? (list math))
 				(let ((operator (car math)))
-					(printf "s~n" math )
+					(printf "~s~n" math )
 					( cond
 						((list? (cadr math))
 							(cond 
