@@ -101,7 +101,7 @@
      ))
 ;;End Custom Tables
 ( define (decode statement state_len)
-	(printf "~s~n" (cdr statement))
+	(printf "~s~n" (caar statement))
  (let ((command  (car statement) ))
  	(cond
  		((eqv? command 'print)
