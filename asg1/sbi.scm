@@ -101,7 +101,7 @@
      ))
 ;;End Custom Tables
 ( define (decode statement state_len)
-	(printf "~s~n" (if(procedure?(cddr statment))))
+
  (let ((command  (car statement) ))
  	(cond
  		((eqv? command 'print)
@@ -115,6 +115,12 @@
  					(display (decode (cddr statement)))
  					(newline)
  				)
+ 			)
+ 		)
+
+ 		((procedure? command)
+ 			(cond 
+ 				(printf "~s~n" command)
  			)
  		)
 
