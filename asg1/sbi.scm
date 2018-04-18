@@ -101,9 +101,9 @@
      ))
 ;;End Custom Tables
 ( define (decode statement state_len)
+	(printf "~s~n" (if(procedure?(cddr statment))))
  (let ((command  (car statement) ))
  	(cond
-
  		((eqv? command 'print)
  			(cond ((= 1 state_len) (printf "~n")) 
  				((= 2 state_len) 
@@ -112,7 +112,7 @@
  				)
  				((= 3 state_len) 
  					(display (cadr statement))
- 					(display (cddr statement))
+ 					(display (decode (cddr statement)))
  					(newline)
  				)
  			)
@@ -127,6 +127,7 @@
  	)
  )
 )
+
 
 (define (decifer line)
 
