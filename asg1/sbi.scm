@@ -117,7 +117,7 @@
 						((list? (cadr math))
 							(cond 
 								((list? (caddr math))
-									(execute (cadr math))
+									(execute (car math))
 								)
 							)
 						)
