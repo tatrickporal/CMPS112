@@ -112,13 +112,12 @@
 			)
 			((pair? (list (car decode)))
 				(let ((operator (car execute)))
-					(printf "~s" (list? (cadr execute)))
 					( cond
 						((list? (cadr execute))
-							(execute (cadr execute))
+							(printf "~s" (cadr execute))
 						)
 						((list? (caddr execute))
-								(execute (caddr execute))
+								(printf "~s" (caddr execute))
 						)
 						(not (list? (cadr execute))
 							(cond 
