@@ -103,7 +103,16 @@
 
 (define (execute decode)
 	(let ((execute  (car decode) ))
-		(printf "~s~n" (car execute))
+		( cond
+			((= 1 (length decode))
+				(printf "~s~n" decode)
+			)
+			((pair? (list (cdr decode)))
+				(printf "~s~n" decode)
+			)
+
+		
+		)
 	)
 	
 )
