@@ -102,7 +102,7 @@
 ;;End Custom Tables
 
 (define (execute decode)
-	(printf "~s~n" decode)
+	(printf "~s~n" (car decode))
 )
 
 ( define (decode statement state_len)
@@ -124,9 +124,6 @@
  				)
  			)
  		)
-
- 	
-
 
  		((eqv? command 'let)
  			(cond 
