@@ -107,7 +107,7 @@
 			((= 1 (length (car decode)) )
 				(printf "length 1 ~s~n" (car decode) )
 			)
-			((pair? (list (cdr decode)))
+			((pair? (list (car decode)))
 				(printf "~s~n" (car decode) )
 			)
 
