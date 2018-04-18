@@ -127,7 +127,7 @@
 
  		((eqv? command 'let)
  			(cond 
- 				(printf "~s~n" command)
+ 				(printf "is ~s~n" command)
  			)
  		)
 
