@@ -101,8 +101,9 @@
      ))
 ;;End Custom Tables
 ( define (decode statement state_len)
-	(printf "~s~n" (car statement))
+	
  (let ((command  (car statement) ))
+ 	(printf "~s~n" (car command))
  	(cond
  		; if 
  		((eqv? command 'print)
