@@ -43,18 +43,17 @@
 
 (define (write-program-by-line filename program)
 
-    (map (lambda (line) 
-    		(decifer  (cdr line))
+    (map (lambda (line)
+    	(decifer  (cdr line))
     	) program)
-    ;;(decode program)
 )
 
 (define (main arglist)
     (if (or (null? arglist) (not (null? (cdr arglist))))
         (usage-exit)
         (let* ((sbprogfile (car arglist))
-             	(program (readlist-from-inputfile sbprogfile)))
-            	(write-program-by-line sbprogfile program))))
+        	(program (readlist-from-inputfile sbprogfile)))
+        (write-program-by-line sbprogfile program))))
 
 ;;Custom Tables Start
 ;;Stores
@@ -106,46 +105,35 @@
 
 (define (execute decode)
 	(let ((math  (car decode) ))
-		
 		( cond
-			
 			((pair? (list math))
 				(let ((operator (car math)))
-					
 					( cond
 						((list? (cadr math))
-							(cond 
+							(cond
 								((list? (caddr math))
 									(let ((arg1 (execute (list(cadr math)))))
 										(printf "~s" arg1)
 										(let ((arg2 (execute (list(caddr math)))))
-										(printf " ~s" ((symbol-get operator) arg1 arg2 ) )
+											(printf " ~s" ((symbol-get operator) arg1 arg2 ) )
+											)
 										)
-									
+									)
+								)
+							)
+						(not (list? (cadr math))
+							(cond
+								(not (list? (caddr math))
+									(printf " ~s" ((symbol-get operator) (cadr math) (caddr math)) )
 									)
 								)
 							)
 						)
-						
-						(not (list? (cadr math))
-							(cond 
-								(not (list? (caddr math))
-									(printf " ~s" ((symbol-get operator) (cadr math) (caddr math)) )
-								)
-							)
-						)
-						
 					)
-					
-					
 				)
 			)
-
-		
 		)
 	)
-	
-)
 
 ( define (decode statement state_len)
 	
