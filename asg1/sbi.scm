@@ -102,7 +102,10 @@
 ;;End Custom Tables
 
 (define (execute decode)
-	(printf "~s~n" (car decode))
+	(let ((execute  (car decode) ))
+		(printf "~s~n" (car execute))
+	)
+	
 )
 
 ( define (decode statement state_len)
