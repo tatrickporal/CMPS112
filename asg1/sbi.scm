@@ -108,7 +108,9 @@
 				(printf "length 1 ~s~n" (car decode) )
 			)
 			((pair? (list (car decode)))
-				(printf "~s~n" (car execute) )
+				(let ((equation) (car execute))
+					(printf "equation ~s~n" equation)
+				)
 			)
 
 		
