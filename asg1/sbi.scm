@@ -105,25 +105,26 @@
 ;;End Custom Tables
 
 (define (execute decode)
-	(let ((execute  (car decode) ))
+	(let ((math  (car decode) ))
 		( cond
 			((= 1 (length (car decode)) )
 				(printf "length 1 ~s~n" (car decode) )
 			)
 			((pair? (list (car decode)))
-				(let ((operator (car execute)))
+				(let ((operator (car math)))
 					( cond
-						((list? (caddr execute))
-							(printf "~s" (caddr execute))
-						)
-						((list? (cadr execute))
-							(printf "~s" (cadr execute))
+						((list? (cadr math))
+							(cond 
+								((list? (caddr math))
+									(execute (cadr math))
+								)
+							)
 						)
 						
-						(not (list? (cadr execute))
+						(not (list? (cadr math))
 							(cond 
-								(not (list? (caddr execute))
-									(printf " ~s" ((symbol-get operator) (cadr execute) (caddr execute)) )
+								(not (list? (caddr math))
+									(printf " ~s" ((symbol-get operator) (cadr math) (caddr math)) )
 								)
 							)
 						)
