@@ -112,21 +112,10 @@
 			)
 			((pair? (list (car decode)))
 				(let ((operator (car execute)))
-							;;(cond 
-								;(list? (cadr execute)
-									;(execute (cadr execute))
-								;)
-								;(list? (caddr execute)
-									;(execute (caddr execute))
-								;)
-								
-									(printf " ~s" ( (symbol-get operator) (cadr execute) (caddr execute) ) )
-								
-								
-							;)
+							
 						
-								
-							)
+					(printf " ~s" ( (symbol-get operator) (cadr execute) (caddr execute) ) )
+							
 						
 					
 				)
@@ -135,7 +124,7 @@
 		)
 	)
 	
-
+)
 
 ( define (decode statement state_len)
 	
