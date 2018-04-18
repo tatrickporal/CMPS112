@@ -112,7 +112,7 @@
  				)
  				((= 3 state_len) 
  					(display (cadr statement))
- 					(display (execute_math(cddr statement))) 
+ 					(display (cddr statement))
  					(newline)
  				)
  			)
