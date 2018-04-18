@@ -100,6 +100,11 @@
 
      ))
 ;;End Custom Tables
+
+(define (execute argument)
+	(printf "~s~n" argument)
+)
+
 ( define (decode statement state_len)
 	
  (let ((command  (car statement) ))
@@ -114,17 +119,14 @@
  				)
  				((= 3 state_len) 
  					(display (cadr statement))
- 					(display (decode (cddr statement) (length (cddr statement) )))
+ 					(display (cddr statement) (execute (cddr statement) ))
  					(newline)
  				)
  			)
  		)
 
- 		((procedure? (car command))
- 			(cond 
- 				(printf " this ~s~n" command)
- 			)
- 		)
+ 	
+
 
  		((eqv? command 'let)
  			(cond 
