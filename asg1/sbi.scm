@@ -92,7 +92,7 @@
         (rem     ,(lambda (x y) (- x (* (quot x y) y))))
         (+       ,+)
         (-       ,-)
-        (/       ,(lambda (x y) (/ x y)))
+        (/       ,(lambda (x y) ( / x y)))
         (*       ,*)
         (^       ,expt)
         (ceil    ,ceiling)
@@ -112,15 +112,15 @@
 			)
 			((pair? (list (car decode)))
 				(let ((operator (car execute)))
-							
-						
-					(printf " ~s" ( (symbol-get operator) (cadr execute) (caddr execute) ) )
-							
-						
-					
+					( cond
+						(number?(cadr execute)
+							(printf " ~s" ( (symbol-get operator) (cadr execute) (caddr execute) ) )
+						)
+					)
 				)
 			)
 
+		
 		)
 	)
 	
