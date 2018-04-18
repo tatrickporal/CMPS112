@@ -113,10 +113,10 @@
 			((pair? (list (car decode)))
 				(let ((operator (car execute)))
 							(cond 
-								(not(= 1((length (cadr execute))))
+								(list? (cadr execute)
 									(execute (cadr execute))
 								)
-								(not(= 1((length (caddr execute))))
+								(list? (caddr execute)
 									(execute (caddr execute))
 								)
 								(else
