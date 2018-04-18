@@ -119,9 +119,9 @@
 								(list? (caddr execute)
 									(execute (caddr execute))
 								)
-								(else
+								
 									(printf " ~s" ( (symbol-get operator) (cadr execute) (caddr execute) ) )
-								)
+								
 								
 							)
 						
