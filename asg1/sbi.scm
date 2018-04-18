@@ -103,7 +103,7 @@
 ( define (decode statement state_len)
 	
  (let ((command  (car statement) ))
- 	(printf "~s~n" (car command))
+ 	(printf "~s, length = ~s~n" command (length (command))
  	(cond
  		; if 
  		((eqv? command 'print)
