@@ -117,6 +117,7 @@
 							(cond 
 								((list? (caddr math))
 									(let ((arg1 (execute (list(cadr math)))))
+										(printf "~s" arg1)
 										(let ((arg2 (execute (list(caddr math)))))
 										(printf " ~s" ((symbol-get operator) arg1 arg2 ) )
 										)
