@@ -108,9 +108,7 @@
 	(let ((math  (car decode) ))
 		
 		( cond
-			((= 1 (length math) )
-				(printf "length 1 ~s~n" math )
-			)
+			
 			((pair? (list math))
 				(let ((operator (car math)))
 					(printf "~s~n" math )
