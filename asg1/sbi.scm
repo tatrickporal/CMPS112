@@ -104,8 +104,8 @@
 (define (execute decode)
 	(let ((execute  (car decode) ))
 		( cond
-			((= 1 (length (car decode)))
-				(printf "~s~n" (car decode))
+			((= 1 (length decode))
+				(printf "length 1 ~s~n" decode)
 			)
 			((pair? (list (cdr decode)))
 				(printf "~s~n" (cdr decode) )
