@@ -112,9 +112,15 @@
  				)
  				((= 3 state_len) 
  					(display (cadr statement))
- 					(display (cddr statement)) 
+ 					(display (execute_math(cddr statement))) 
  					(newline)
  				)
+ 			)
+ 		)
+
+ 		((eqv? command 'let)
+ 			(cond 
+ 				(printf "~s~n" command)
  			)
  		)
 
