@@ -120,7 +120,7 @@
 
  		((procedure? command)
  			(cond 
- 				(printf "~s~n" command)
+ 				(printf " this ~s~n" command)
  			)
  		)
 
