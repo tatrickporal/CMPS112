@@ -1,0 +1,9 @@
+rcsid = $Id: hashbang.ml,v 361.2 2006-02-17 13:30:32-08 - - $
+interactive = false
+word_size = 64
+max_string_length = 144115188075855863 = 0x1FFFFFFFFFFFFF7
+max_array_length = 18014398509481983 = 0x3FFFFFFFFFFFFF
+getcwd () = /afs/cats.ucsc.edu/courses/cmps112-wm/Languages/ocaml/Examples
+os_type = Unix
+executable_name = /afs/cats.ucsc.edu/courses/cmps112-wm/usr/ocaml/bin/ocaml
+argv.(0) = ./hashbang.ml

@@ -1,0 +1,9 @@
+#!/bin/sh -x
+cid *.ml *.scm $0
+for file in *.ml
+do
+   cid $file
+   ocamlc -i $file >$file.types
+   mkpspdf $file.ps $file $file.types
+done
+

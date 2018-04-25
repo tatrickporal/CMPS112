@@ -1,0 +1,18 @@
+bash-1$ ocaml
+        OCaml version 4.02.1
+
+# #use "msorttailrec.ml";;
+val foldl : ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>
+val foldr : ('a -> 'b -> 'b) -> 'b -> 'a list -> 'b = <fun>
+val cons : 'a -> 'a list -> 'a list = <fun>
+val swap : ('a -> 'b -> 'c) -> 'b -> 'a -> 'c = <fun>
+val revcat : '_a list -> '_a list -> '_a list = <fun>
+val reverse : '_a list -> '_a list = <fun>
+val un : ('a -> 'b -> bool) -> 'a -> 'b -> bool = <fun>
+val merge : ('_a -> '_a -> bool) -> '_a list -> '_a list -> '_a list = <fun>
+val split : 'a list -> 'a list * 'a list = <fun>
+val msort : ('_a -> '_a -> bool) -> '_a list -> '_a list = <fun>
+val msortlt : '_a list -> '_a list = <fun>
+- : int list = [-10; 8; 11; 12; 33; 44; 66; 202]
+# exit 0;;
+

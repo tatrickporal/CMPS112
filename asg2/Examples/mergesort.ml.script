@@ -1,0 +1,14 @@
+bash-1$ ocaml
+        OCaml version 4.02.1
+
+# #use "mergesort.ml";;
+val merge : ('a -> 'a -> bool) -> 'a list -> 'a list -> 'a list = <fun>
+val split : 'a list -> 'a list * 'a list = <fun>
+val msort : ('a -> 'a -> bool) -> 'a list -> 'a list = <fun>
+val sort1 : int list -> int list = <fun>
+val mergesort : ('a -> 'a -> bool) -> 'a list -> 'a list = <fun>
+val sort2 : int list -> int list = <fun>
+# mergesort (>) [3;4;33;10;-5;9];;
+- : int list = [33; 10; 9; 4; 3; -5]
+# 
+bash-2$ exit

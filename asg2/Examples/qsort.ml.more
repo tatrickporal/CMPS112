@@ -1,0 +1,41 @@
+::::::::::::::
+qsort.ml
+::::::::::::::
+(* $Id: qsort.ml,v 361.2 2006-03-03 14:36:37-08 - - $ *)
+
+(*
+* Tricky version of qsort.  
+* Note:  O(n^2) if pivot is badly chosen.
+*)
+
+let filter = List.filter ;;
+let compose f g x = f (g x) ;;
+
+let rec qsort (<?) list = match list with
+    | [] -> []
+    | car::[] -> list
+    | car::cdr -> 
+      let (large) = filter ((<?) car) cdr
+      and (small) = filter (compose not ((<?) car)) cdr
+      in qsort (<?) small @ [car] @ qsort (<?) large
+    ;;
+
+let thelist = [6; 7; 11; 8; 4; 2; 9; -4; 10] ;;
+
+qsort (<) thelist ;;
+qsort (>) thelist ;;
+
+::::::::::::::
+qsort.ml.script
+::::::::::::::
+bash-1$ ocaml
+        OCaml version 4.02.1
+
+# #use "qsort.ml";;
+val filter : ('a -> bool) -> 'a list -> 'a list = <fun>
+val compose : ('a -> 'b) -> ('c -> 'a) -> 'c -> 'b = <fun>
+val qsort : ('a -> 'a -> bool) -> 'a list -> 'a list = <fun>
+val thelist : int list = [6; 7; 11; 8; 4; 2; 9; -4; 10]
+- : int list = [-4; 2; 4; 6; 7; 8; 9; 10; 11]
+- : int list = [11; 10; 9; 8; 7; 6; 4; 2; -4]
+# 

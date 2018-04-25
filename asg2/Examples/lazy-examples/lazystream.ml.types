@@ -1,0 +1,19 @@
+val ( !! ) : 'a Lazy.t -> 'a
+val prtf : ('a, out_channel, unit) format -> 'a
+type 'a stream = End | Stream of 'a * 'a stream Lazy.t
+val ( @:: ) : 'a -> 'a stream Lazy.t -> 'a stream
+val head : 'a stream -> 'a
+val tail : 'a stream -> 'a stream
+val take : int -> 'a stream -> 'a stream
+val list_of_stream : 'a stream -> 'a list
+val iter : ('a -> 'b) -> 'a stream -> unit
+val iter2 : ('a -> 'b -> 'c) -> 'a stream -> 'b stream -> unit
+val map2 : ('a -> 'b -> 'c) -> 'a stream -> 'b stream -> 'c stream
+val range : int -> int -> int stream
+val naturals : int stream
+val fac : int -> int
+val printfac : int -> unit
+val printfacs : int -> unit
+val fibstream : int stream
+val printfib : int -> int -> unit
+val printfibs : int -> unit

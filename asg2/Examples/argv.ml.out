@@ -1,0 +1,6 @@
+basename argv.(0) = argv.ml
+executable_name = /afs/cats.ucsc.edu/courses/cmps112-wm/usr/ocaml/bin/ocaml
+argv.(0) = argv.ml
+argv.(1) = foo
+argv.(2) = bar
+argv.(3) = baz

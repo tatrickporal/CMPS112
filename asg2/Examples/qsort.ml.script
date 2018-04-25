@@ -1,0 +1,11 @@
+bash-1$ ocaml
+        OCaml version 4.02.1
+
+# #use "qsort.ml";;
+val filter : ('a -> bool) -> 'a list -> 'a list = <fun>
+val compose : ('a -> 'b) -> ('c -> 'a) -> 'c -> 'b = <fun>
+val qsort : ('a -> 'a -> bool) -> 'a list -> 'a list = <fun>
+val thelist : int list = [6; 7; 11; 8; 4; 2; 9; -4; 10]
+- : int list = [-4; 2; 4; 6; 7; 8; 9; 10; 11]
+- : int list = [11; 10; 9; 8; 7; 6; 4; 2; -4]
+# 

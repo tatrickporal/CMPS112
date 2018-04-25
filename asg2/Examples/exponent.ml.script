@@ -1,0 +1,19 @@
+bash-1$ ocaml
+        OCaml version 4.02.1
+
+# #use "exponent.ml";;
+val compose : ('a -> 'b) -> ('c -> 'a) -> 'c -> 'b = <fun>
+val odd : int -> bool = <fun>
+val even : int -> bool = <fun>
+val swap : ('a -> 'b -> 'c) -> 'b -> 'a -> 'c = <fun>
+val powerr : float -> int -> float = <fun>
+val powert : float -> int -> float = <fun>
+val square : float -> float = <fun>
+val cube : float -> float = <fun>
+val iiito : int -> float = <fun>
+val ivto : int -> float = <fun>
+val e : float = 2.71828182845904509
+val eto : int -> float = <fun>
+# exit;;
+- : int -> 'a = <fun>
+# exit 0;;

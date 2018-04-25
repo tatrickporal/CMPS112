@@ -1,0 +1,7 @@
+fac 0 = 1
+fac 1 = 1
+fac 2 = 2
+fac 5 = 120
+fac 10 = 3628800
+fac 20 = 2432902008176640000
+Exception: Invalid_argument "fac (-5)".

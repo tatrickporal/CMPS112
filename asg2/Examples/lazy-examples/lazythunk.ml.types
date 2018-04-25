@@ -1,0 +1,25 @@
+type 'a promise = Value of 'a | Excep of exn | Delay of (unit -> 'a)
+type 'a thunk = 'a promise ref
+val force : 'a promise ref -> 'a
+val ( !! ) : 'a promise ref -> 'a
+type 'a stream = End | Stream of 'a * 'a stream thunk
+exception End_stream
+val ( @:: ) : 'a -> 'a stream thunk -> 'a stream
+val head : 'a stream -> 'a
+val tail : 'a stream -> 'a stream
+val take : int -> 'a stream -> 'a stream
+val list_of_stream : 'a stream -> 'a list
+val drop : int -> 'a stream -> 'a stream
+val iter : ('a -> 'b) -> 'a stream -> unit
+val iter2 : ('a -> 'b -> 'c) -> 'a stream -> 'b stream -> unit
+val iter3 :
+  ('a -> 'b -> 'c -> 'd) -> 'a stream -> 'b stream -> 'c stream -> unit
+val map2 : ('a -> 'b -> 'c) -> 'a stream -> 'b stream -> 'c stream
+val range : int -> int -> int stream
+val naturals : int stream
+val fac : int -> int
+val printfac : int -> unit
+val printfacs : int -> unit
+val fibstream : int stream
+val printfib : int -> int -> int -> unit
+val printfibs : int -> unit
