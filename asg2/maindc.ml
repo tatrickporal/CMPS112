@@ -3,9 +3,6 @@
 include Scanner
 include Bigint
 
-open Bigint
-open Printf
-open Scanner
 
 type stack_t = Bigint.bigint Stack.t
 let push = Stack.push
