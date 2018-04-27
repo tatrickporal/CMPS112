@@ -60,7 +60,7 @@ module Bigint = struct
         then Bigint (neg1, add' value1 value2 0)
         else zero
 
-    let sub = printf "THIS  WTF\n"
+    let sub = add
 
     let mul = add
 
