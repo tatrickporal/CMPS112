@@ -60,9 +60,9 @@ module Bigint = struct
         if neg1 = neg2
         then Bigint (neg1, add' value1 value2 0)
         else zero
-
-    let sub = add
     let sub = printf "THIEITHTO\n"
+    let sub = add
+
 
     let mul = add
 
