@@ -64,8 +64,6 @@ module Bigint = struct
 
     let sub = printf "THIS HAHA\n"
 
-    let sub = add
-
     let mul = add
 
     let div = add
