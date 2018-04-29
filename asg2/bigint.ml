@@ -71,7 +71,7 @@ module Bigint = struct
 
     let sub (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
         if neg1 = neg2
-        then prinf "This is sorta working\n" 
+        then printf "This is sorta working\n" 
 (*         then Bigint (neg1, add' value1 value2 0)
  *)      else zero
 
