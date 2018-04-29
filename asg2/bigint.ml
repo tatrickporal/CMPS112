@@ -59,6 +59,7 @@ module Bigint = struct
         if neg1 = neg2
         then Bigint (neg1, add' value1 value2 0)
         else zero
+        
     let rec sub' list1 list2 carry = match (list1, list2, carry) with
         | list1, [], 0       -> list1
         | [], list2, 0       -> list2
@@ -72,8 +73,6 @@ module Bigint = struct
         if neg1 = neg2
         then Bigint (neg1, add' value1 value2 0)
         else zero
-
-    let sub = add
 
     let mul = add
 
