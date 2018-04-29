@@ -66,8 +66,8 @@ module Bigint = struct
         | list1, [], carry   -> add' list1 [carry] 0
         | [], list2, carry   -> add' [carry] list2 0
         | car1::cdr1, car2::cdr2, carry ->
+        | prinf "This is sorta working\n" 
           let sum = car1 + car2 + carry
-          prinf "This is sorta working\n" 
           in  sum mod radix :: add' cdr1 cdr2 (sum / radix)
 
     let sub (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
