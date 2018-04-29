@@ -68,7 +68,6 @@ module Bigint = struct
         | car1::cdr1, car2::cdr2, carry ->
           let sum = car1 + car2 + carry
           in sum mod radix :: add' cdr1 cdr2 (sum / radix)
-          printf "This is sorta working\n" 
 
     let sub (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
         if neg1 = neg2
