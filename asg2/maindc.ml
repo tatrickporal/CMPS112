@@ -16,6 +16,7 @@ type binop_t = bigint -> bigint -> bigint
 
 let print_number number = 
     printf "number = %s\n%!" (string_of_bigint number)
+    printf "number = %d\n%!" (strlen (string_of_bigint number))
     
 
 let print_stackempty () = printf "stack empty\n%!"
