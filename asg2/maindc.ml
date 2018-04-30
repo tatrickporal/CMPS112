@@ -17,9 +17,13 @@ type binop_t = bigint -> bigint -> bigint
 let print_number number = 
     let string_number = string_of_bigint number in 
     let string_length = strlen string_number in 
-    if (string_length < 69)
-    then printf "%s\n" string_number
-    else printf "0\n"
+    let rec print_number' index = 
+        let remaining_length = string_length - index in 
+            if(remaining_length >= 69) then
+            (printf "%s\\\n" (substring string_number index 69);
+                (print_number' (index + 69))
+            else printf "%s\n!" (substring string_number index remaining_length)
+    print_number' 0
     
     
 
