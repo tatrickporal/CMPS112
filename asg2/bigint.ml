@@ -28,6 +28,7 @@ module Bigint = struct
 
     let bigint_of_string str =
         let len = strlen str
+        printf "len =%d \n" string_of_int len
         in  let to_intlist first =
                 let substr = strsub str first (len - first) in
                 let digit char = int_of_char char - int_of_char '0' in
@@ -41,7 +42,8 @@ module Bigint = struct
     let string_of_bigint (Bigint (sign, value)) =
         match value with
         | []    -> "0"
-        | value -> let reversed = reverse value
+        | value -> 
+                   let reversed = reverse value
                    in  strcat ""
                        ((if sign = Pos then "" else "-") ::
                         (map string_of_int reversed))
