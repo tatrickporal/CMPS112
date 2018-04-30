@@ -57,7 +57,6 @@ module Bigint = struct
 
     let add (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
         if neg1 = neg2
-        then printf " neg1 =  \n"
         then Bigint (neg1, add' value1 value2 0)
         else zero
 
