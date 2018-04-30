@@ -63,18 +63,16 @@ module Bigint = struct
     let rec sub' list1 list2 carry = match (list1, list2, carry) with
         | list1, [], 0       -> list1
         | [], list2, 0       -> list2
-        | list1, [], carry   -> add' list1 [carry] 0
-        | [], list2, carry   -> add' [carry] list2 0
+        | list1, [], carry   -> sub' list1 [carry] 0
+        | [], list2, carry   -> sub' [carry] list2 0
         | car1::cdr1, car2::cdr2, carry ->
           let diff = car1 - car2 - carry
           in  diff mod radix :: sub' cdr1 cdr2 (diff / radix)
 
     let sub (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
         if neg1 = neg2
-        then Bigint (neg1, add' value1 value2 0)
+        then Bigint (neg1, sub' value1 value2 0)
         else zero
-
-
 
     let mul = add
 
