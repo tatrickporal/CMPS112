@@ -15,12 +15,11 @@ let ord thechar = int_of_char thechar
 type binop_t = bigint -> bigint -> bigint
 
 let rec print_number' index = 
-        printf "in print_number' \n"
-    (* let remaining_length = string_length - index in 
+    let remaining_length = string_length - index in 
             if(remaining_length >= 69) then
             (printf "%s\\\n" (substring string_number index 69);
                 (print_number' (index + 69)))
-            else printf "%s\n!" (substring string_number index remaining_length) *)
+            else printf "%s\n!" (substring string_number index remaining_length)
 
 
 let print_number number = 
