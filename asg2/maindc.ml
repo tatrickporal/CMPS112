@@ -21,7 +21,7 @@ let print_number number =
         let remaining_length = string_length - index in 
             if(remaining_length >= 69) then
             (printf "%s\\\n" (substring string_number index 69);
-                (print_number' (index + 69))
+                (print_number' (index + 69)))
             else printf "%s\n!" (substring string_number index remaining_length)
     print_number' 0
     
