@@ -14,7 +14,7 @@ let pop = Stack.pop
 let ord thechar = int_of_char thechar
 type binop_t = bigint -> bigint -> bigint
 
-let print_number number = printf "%s\n%!" (string_of_bigint number)
+let print_number number = printf "%s\n%" (string_of_bigint number)
 
 let print_stackempty () = printf "stack empty\n%!"
 
