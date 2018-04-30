@@ -14,7 +14,7 @@ let pop = Stack.pop
 let ord thechar = int_of_char thechar
 type binop_t = bigint -> bigint -> bigint
 
-let rec print_number' index = 
+let rec print_number' (string_length , string_number, index) = 
     let remaining_length = string_length - index in 
             if(remaining_length >= 69) then
             (printf "%s\\\n" (substring string_number index 69);
@@ -25,7 +25,7 @@ let rec print_number' index =
 let print_number number = 
     let string_number = string_of_bigint number in 
     let string_length = strlen string_number in 
-    print_number' 0
+    print_number' (string_length, string_number,0)
     
 
     
