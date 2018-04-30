@@ -14,8 +14,12 @@ let pop = Stack.pop
 let ord thechar = int_of_char thechar
 type binop_t = bigint -> bigint -> bigint
 
-let print_number number = printf "%s\n%!" (string_of_bigint number)
-    (* printf "%s\n%!" strlen (string_of_bigint number) *)
+let print_number number = 
+    let string_number = string_of_bigint number in 
+    let string_length = strlen string_number in 
+    if (string_length < 69)
+    then printf "%s\n!"
+    else zero
     
     
 
