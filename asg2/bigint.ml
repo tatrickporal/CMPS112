@@ -28,7 +28,7 @@ module Bigint = struct
 
     let bigint_of_string str =
         let len = strlen str
-        printf "len =%s \n" string_of_int len;;
+        printf "len =%d \n"  len;;
         in  let to_intlist first =
                 let substr = strsub str first (len - first) in
                 let digit char = int_of_char char - int_of_char '0' in
