@@ -19,7 +19,7 @@ let print_number number =
     let string_length = strlen string_number in 
     if (string_length < 69)
     then printf "%s\n!"
-    else zero
+    else printf "0\n"
     
     
 
