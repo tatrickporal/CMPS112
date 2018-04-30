@@ -18,7 +18,7 @@ let print_number number =
     let string_number = string_of_bigint number in 
     let string_length = strlen string_number in 
     if (string_length < 69)
-    then printf "%s\n!"
+    then printf "%s\n!" string_number
     else printf "0\n"
     
     
