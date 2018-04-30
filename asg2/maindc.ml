@@ -26,8 +26,7 @@ let rec print_number' index =
 let print_number number = 
     let string_number = string_of_bigint number in 
     let string_length = strlen string_number in 
-    printf "0\n"
-    in print_number' 0
+    print_number' 0
     
 
     
