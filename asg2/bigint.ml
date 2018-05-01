@@ -69,16 +69,16 @@ module Bigint = struct
         | car1::cdr1, car2::cdr2, carry ->
           let sum = car1 + car2 + carry
           in  sum mod radix :: add' cdr1 cdr2 (sum / radix)
-
-    let rec sub' list1 list2 carry = match (list1, list2, carry) with
+        let rec sub' list1 list2 carry = match (list1, list2, carry) with
         | list1, [], 0       -> list1
         | [], list2, 0       -> list2
         | list1, [], carry   -> sub' list1 [carry] 0
         | [], list2, carry   -> sub' [carry] list2 0
         | car1::cdr1, car2::cdr2, carry ->
-        printf "%d\n" (length_comparison' list1 list2)
-          (* let diff = car1 - car2 - carry
-          in  diff mod radix :: sub' cdr1 cdr2 (diff / radix) *)
+          let diff = car1 - car2 - carry
+          in if(diff >= 0) then diff :: sub' cdr1 cdr2 0
+             else (diff + 10) :: sub' cdr1 cdr2 1 
+         
 
     let add (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
         if neg1 = neg2
