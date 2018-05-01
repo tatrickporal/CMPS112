@@ -47,6 +47,16 @@ module Bigint = struct
                        ((if sign = Pos then "" else "-") ::
                         (map string_of_int reversed))
 
+
+
+    let rec length_comparison' list1 list2 = match (list1,list2) with
+        | list1, []      -> 1 (*First is larger so return a 1*)
+        | [], list2      -> -1 (*Second is larger so return a -1*)
+        | [],[]          -> 0 (*They are equal in size so return a 0*)
+        | car1::cdr1, car2::cdr2 ->
+            printf "%d" car1
+
+
     let rec add' list1 list2 carry = match (list1, list2, carry) with
         | list1, [], 0       -> list1
         | [], list2, 0       -> list2
@@ -62,6 +72,7 @@ module Bigint = struct
         | list1, [], carry   -> sub' list1 [carry] 0
         | [], list2, carry   -> sub' [carry] list2 0
         | car1::cdr1, car2::cdr2, carry ->
+        length_comparison' list1 list2
           let diff = car1 - car2 - carry
           in  diff mod radix :: sub' cdr1 cdr2 (diff / radix)
 
