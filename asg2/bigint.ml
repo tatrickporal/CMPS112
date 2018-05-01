@@ -55,9 +55,8 @@ module Bigint = struct
         | [],[]          -> 0 (*They are equal in size so return a 0*)
         | car1::cdr1, car2::cdr2 ->
             let flag = length_comparison' cdr1 cdr2 in
-                if(flag = 0) then
-                    if(car1 != car2) then 
-                        if(car1<car2) then -1
+                if(flag = 0 && car1 != car2) then
+                    if(car1<car2) then -1
                         else 1
 
 
