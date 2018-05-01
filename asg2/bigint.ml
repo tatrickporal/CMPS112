@@ -54,7 +54,7 @@ module Bigint = struct
         | [], list2      -> -1 (*Second is larger so return a -1*)
         | [],[]          -> 0 (*They are equal in size so return a 0*)
         | car1::cdr1, car2::cdr2 ->
-            printf "%d" car1
+            printf "%u" car1
 
 
     let rec add' list1 list2 carry = match (list1, list2, carry) with
