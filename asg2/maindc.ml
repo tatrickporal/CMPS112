@@ -17,7 +17,7 @@ type binop_t = bigint -> bigint -> bigint
 let rec print_number' (string_length , string_number, index) = 
     let remaining_length = string_length - index in 
             if(remaining_length >= 69) then
-            (printf "%s\\\n" (String.sub index string_number 69);
+            (printf "%s\\\n" (String.sub string_number index 69);
                 (print_number' (index + 69)))
             else printf "%s\n!" (String.sub index remaining_length string_number)
 
