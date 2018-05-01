@@ -54,7 +54,11 @@ module Bigint = struct
         | [], list2      -> -1 (*Second is larger so return a -1*)
         | [],[]          -> 0 (*They are equal in size so return a 0*)
         | car1::cdr1, car2::cdr2 ->
-            printf "%o" car1
+            let flag = length_comparison' cdr1 cdr2 in
+                if(flag = 0) then
+                    if(car1 != car2) then 
+                        if(car1<car2) then -1
+                        else 1
 
 
     let rec add' list1 list2 carry = match (list1, list2, carry) with
@@ -72,8 +76,9 @@ module Bigint = struct
         | list1, [], carry   -> sub' list1 [carry] 0
         | [], list2, carry   -> sub' [carry] list2 0
         | car1::cdr1, car2::cdr2, carry ->
-          let diff = car1 - car2 - carry
-          in  diff mod radix :: sub' cdr1 cdr2 (diff / radix)
+        printf "%d\n" (length_comparison' list1 list2)
+          (* let diff = car1 - car2 - carry
+          in  diff mod radix :: sub' cdr1 cdr2 (diff / radix) *)
 
     let add (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
         if neg1 = neg2
