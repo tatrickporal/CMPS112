@@ -57,7 +57,8 @@ module Bigint = struct
             let flag = length_comparison' cdr1 cdr2 in
                 if(flag = 0 && car1 != car2) then
                     if(car1<car2) then -1
-                        else 1
+                    else 1
+                else flag
 
 
     let rec add' list1 list2 carry = match (list1, list2, carry) with
