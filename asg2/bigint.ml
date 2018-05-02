@@ -97,7 +97,7 @@ module Bigint = struct
             then let sign = (if neg1 = Pos then Neg else Pos) in 
             Bigint (sign, sub' value2 value1 0)
             else Bigint (neg1, sub' value1 value2 0)
-        else Bigint (neg1, add' value1 value2 0)
+        else zero
 
     let mul = add
 
