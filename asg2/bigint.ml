@@ -104,14 +104,13 @@ module Bigint = struct
     let rec mul' list1 list2 = match (list1, list2) with 
     |list1,[] -> 0
     |[],list2 -> 0
-    |car1::cdr1, car2::cdr2 ->
-        21442124412
+    |car1::cdr1, car2::cdr2 ->printf "IN MUL"
 
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) = add
     if neg1 = neg2 
-        then Bigint(Pos,mul' (value1,value2))
+        then mul' (value1,value2)
     else 
-        Bigint(Neg,mul' (value1,value2))
+        mul' (value1,value2)
 
 
     let div = add
