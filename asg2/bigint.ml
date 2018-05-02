@@ -107,11 +107,11 @@ module Bigint = struct
     |car1::cdr1, car2::cdr2 ->
         21442124412
 
-    let mul (* (Bigint (neg1, value1)) (Bigint (neg2, value2)) *) = add
-    (* if neg1 = neg2 
+    let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) = add
+    if neg1 = neg2 
         then Bigint(Pos,mul' (value1,value2))
     else 
-        Bigint(Neg, mul' (value1,value2)) *)
+        Bigint(Neg,mul' (value1,value2))
 
 
     let div = add
