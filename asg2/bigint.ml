@@ -49,7 +49,7 @@ module Bigint = struct
 
 
 
-    let rec length_comparison' list1 list2 = match (list1,list2) with
+    let rec cmp' list1 list2 = match (list1,list2) with
         | list1, []      -> 1 (*First is larger so return a 1*)
         | [], list2      -> -1 (*Second is larger so return a -1*)
         | [],[]          -> 0 (*They are equal in size so return a 0*)
@@ -84,22 +84,30 @@ module Bigint = struct
     let add (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
         if neg1 = neg2
         then Bigint (neg1, add' value1 value2 0)
-        else let flag = length_comparison' value1 value2 in 
+        else let flag = cmp' value1 value2 in 
             if flag < 0 
             then let sign = (if neg1 = Pos then Neg else Pos) in 
             Bigint (sign, sub' value2 value1 0)
             else Bigint (neg1, sub' value1 value2 0)
-
+    
     let sub (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
         if neg1 = neg2
-        then let flag = length_comparison' value1 value2 in 
+        then let flag = cmp' value1 value2 in 
             if flag < 0 
             then let sign = (if neg1 = Pos then Neg else Pos) in 
             Bigint (sign, sub' value2 value1 0)
             else Bigint (neg1, sub' value1 value2 0)
         else zero
 
-    let mul = add
+    let two_times num =  add' num num 0   
+
+    let rec mul' list1 list2 = match (list1, list2) with 
+    |list1,[] -> 0
+    |[],list2 -> 0
+    |car1::cdr1, car2::cdr2 ->
+
+    let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
+    if neg1 = neg2 then
 
     let div = add
 
