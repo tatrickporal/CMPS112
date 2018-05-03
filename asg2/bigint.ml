@@ -123,7 +123,7 @@ module Bigint = struct
     
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
     if neg1 = neg2 
-        then let answer, _ = mul' value1 [1]  in Bigint(Pos, trim(answer))
+        then let answer, _ = mul' value1 [1] value2  in Bigint(Pos, trim(answer))
     else 
         let answer,_ = mul' value1 [1] value2 in Bigint(Neg,trim(answer))
 
