@@ -119,13 +119,13 @@ module Bigint = struct
     else let product, remainder  = 
             mul' list1 (two_times p2) (two_times list2) in 
         if (cmp' remainder p2) = -1  then product, remainder
-            else (add' product list2 0), (trim (sub' remainder p2 0)) 
+            else (add' product list2 0),  (sub' remainder p2 0)
     
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
-    if neg1 = neg2 
-        then let answer, _ = mul' value1 [1] value2  in Bigint(Pos, trim(answer))
+    if neg1 = neg2
+        then let answer, _ = mul' value1 [1] value2  in Bigint(Pos, answer)
     else 
-        let answer,_ = mul' value1 [1] value2 in Bigint(Neg,trim(answer))
+        let answer,_ = mul' value1 [1] value2 in Bigint(Neg,answer)
 
      (* let rec div' list1 list2 p2 = 
     if (cmp' list2 list1) = 1 
