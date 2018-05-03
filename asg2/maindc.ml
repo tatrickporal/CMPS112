@@ -14,11 +14,16 @@ let pop = Stack.pop
 let ord thechar = int_of_char thechar
 type binop_t = bigint -> bigint -> bigint
 
-let rec print_number' (string_length , string_number, index) = 
+(* let rec print_number' (string_length , string_number, index) = 
     let remaining_length = string_length - index in 
             if(remaining_length >= 69) then (printf "%s\\\n" (String.sub string_number index 69);
                 (print_number' (string_length, string_number, 69)))
-            else printf "%s\n" (String.sub string_number index remaining_length)
+            else printf "%s\n" (String.sub string_number index remaining_length) *)
+
+
+  let rec print_number' (string_length , string_number, index) = match (string_length , string_number, index) with 
+  |[],_-> ()
+  |car::cdr, 69 -> (printf "%s\\\n" (String.sub string_number index 69)
 
 
 let print_number number = 
