@@ -108,7 +108,7 @@ module Bigint = struct
     if concat_list p2 > concat_list list1
 then list1, [0]
     else let remainder, product = mul' list1 (two_times list2) (two_times p2) in
-        if(concat_list remainder) < concat_list p2) then remainder, product
+        if(concat_list remainder < concat_list p2) then remainder, product
         else (sub' remainder p2 0), (add' product list2 0)
 
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
