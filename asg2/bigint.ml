@@ -103,7 +103,7 @@ module Bigint = struct
 
     let rec mul' list1 list2 p2 = 
     let remainder, product = mul' list1 (two_times list2) (two_times p2) in
-        if((strcat "" (List.rev_map string_of_int remainder)) < (strcat "" (List.rev_map string_of_int power)) ) then remainder, product
+        if((strcat "" (List.rev_map string_of_int remainder)) < (strcat "" (List.rev_map string_of_int p2)) ) then remainder, product
         else (sub' remainder p2 0), (add' product list2 0)
 
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
