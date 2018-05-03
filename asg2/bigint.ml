@@ -114,11 +114,11 @@ module Bigint = struct
     let two_times num =  add' num num 0   
 
     let rec mul' list1 list2 p2 = 
-    if (cmp' list1 list2) > 0 
-        then [], list2
-        else let remainder, product = 
+    if (cmp' list1 list2) < 0 
+        then [], list1
+        else let product, remainder  = 
             mul' list1 (two_times list2) (two_times p2) in 
-        if (cmp' remainder list2) < 0  then remainder, product
+        if (cmp' remainder list2) < 0  then product, remainder
             else (add' product p2 0), (trim (sub' remainder list2 0)) 
     
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
