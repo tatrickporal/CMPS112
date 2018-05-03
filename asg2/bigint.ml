@@ -115,7 +115,7 @@ module Bigint = struct
     if (cmp' list1 list2) > 0 
         then [], list2
         else let remainder, product = 
-            mul' list1 two_times list2 two_times p2 in 
+            mul' list1 (two_times list2) (two_times p2) in 
         if (cmp' remainder list2) < 0  then remainder, product
             else (add' product p2 0), (trim (sub' remainder list2 0)) 
     
