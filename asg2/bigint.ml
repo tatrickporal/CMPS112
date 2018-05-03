@@ -59,7 +59,7 @@ module Bigint = struct
                     if(car1<car2) then -1
                     else 1
                 else flag
-    
+
 
         let trim list =
         let rec trim' list' = match list' with
@@ -124,9 +124,9 @@ module Bigint = struct
   
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
     if neg1 = neg2
-        then let  _,answer = mul' value1 [1] value2 in Bigint(Pos, trim(answer))
+        then let  answer,_ = mul' value1 [1] value2 in Bigint(Pos, trim(answer))
     else 
-        let _,answer = mul' value1 [1] value2 in Bigint(Neg,answer)
+        let answer,_ = mul' value1 [1] value2 in Bigint(Neg,answer)
 
 
     let div = add
