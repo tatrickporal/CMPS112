@@ -105,7 +105,7 @@ module Bigint = struct
     let two_times num =  add' num num 0   
 
     let rec mul' list1 list2 p2 = 
-    if concat_list power > concat_list list1
+    if concat_list p2 > concat_list list1
 then list1, [0]
     else let remainder, product = mul' list1 (two_times list2) (two_times p2) in
         if(concat_list remainder) < concat_list p2) then remainder, product
