@@ -22,7 +22,7 @@ type binop_t = bigint -> bigint -> bigint
 
 
   let rec print_number' (string_length , string_number, index) = match (string_length , string_number, index) with 
-  |[],_-> ()
+  |0,0,0-> ()
   |car::cdr, 69 -> printf "%s\\\n" String.sub string_number index 69
 
 
