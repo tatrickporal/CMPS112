@@ -128,7 +128,11 @@ module Bigint = struct
         let answer,_ = mul' value1 [1] value2 in Bigint(Neg,answer)
 
 
-    let div = add
+    let div (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
+    if neg1 = neg2
+        then let  quotient,_ = mul' value1 value2 [1] in Bigint(Pos, trim(answer))
+    else 
+        let quotient,_ = mul' value1 value2 [1] in Bigint(Neg,answer)
     let rem = add
 
     let pow = add
