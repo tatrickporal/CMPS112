@@ -116,25 +116,25 @@ module Bigint = struct
     let rec mul' list1 p2 list2 = 
     (*Checking if p2 is > list1 BASECASE*)
     if(cmp' p2 list1) = 1
-    then [],list1
+    then [1],list2
     (* Else go into recursion  *)
-    else let left,right = mul' list1 (two_times p2) (two_times list2)
-    in if (cmp' right p2) = -1  then left,right
-    else  (sub' right p2 0),(add' left list2 0)  
+    else let left,right = mul' list1 (two_times p2) (two_times list2) in
+    if (cmp' p2 left) = 1 then left,right
+    else (sub' left list1),(add' list2 right 0)
     
   
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
     if neg1 = neg2
-        then let  answer,_ = mul' value1 [1] value2 in Bigint(Pos, trim(answer))
+        then let  _,answer = mul' value1 [1] value2 in Bigint(Pos, answer)
     else 
-        let answer,_ = mul' value1 [1] value2 in Bigint(Neg,answer)
+        zero  (* same but negative *)
 
 
-    let div (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
+    (* let div (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
     if neg1 = neg2
         then let  quotient,_ = mul' value1 value2 [1] in Bigint(Pos, trim(quotient))
     else 
-        let quotient,_ = mul' value1 value2 [1] in Bigint(Neg,quotient)
+        let quotient,_ = mul' value1 value2 [1] in Bigint(Neg,quotient) *)
 
     let rem = add
 
