@@ -115,7 +115,7 @@ module Bigint = struct
 
     let rec mul' list1 p2 list2 = 
     if(cmp' p2 value1) = 1
-    then let answer,_ = list1, p2
+    then let answer,_ = p2, list1
     else then let answer,_ = p2, list1
     
   
