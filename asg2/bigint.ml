@@ -108,9 +108,9 @@ module Bigint = struct
 
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
     if neg1 = neg2 
-        then let rem, answer = mul' value1 value2 [1] in Bigint(Pos, answer )
+        then let remainder, answer = mul' value1 value2 [1] in Bigint(Pos, answer)
     else 
-        let product = mul' value1 value2 1 in Bigint(Neg,product )
+        let remainder,answer = mul' value1 value2 [1] in Bigint(Neg,answer )
 
 
     let div = add
