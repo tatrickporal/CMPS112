@@ -55,11 +55,9 @@ module Bigint = struct
         | [],[]          -> 0 
         | car1::cdr1, car2::cdr2 ->
             let flag = cmp' cdr1 cdr2 in
-                if(flag = 0 ) then 
-                    if ( car1 != car2) then
-                        if(car1<car2) then -1
-                        else 1
-                    else flag
+                if(flag = 0 && car1 != car2) then
+                    if(car1<car2) then -1
+                    else 1
                 else flag
 
 
