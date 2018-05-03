@@ -48,11 +48,11 @@ module Bigint = struct
                         (map string_of_int reversed))
 
 
-
+    (* First is larger so return a 1, Second is larger so return a -1, They are equal in size so return a 0 *)
     let rec cmp' list1 list2 = match (list1,list2) with
-        | list1, []      -> 1 (*First is larger so return a 1*)
-        | [], list2      -> -1 (*Second is larger so return a -1*)
-        | [],[]          -> 0 (*They are equal in size so return a 0*)
+        | list1, []      -> 1 
+        | [], list2      -> -1 
+        | [],[]          -> 0 
         | car1::cdr1, car2::cdr2 ->
             let flag = cmp' cdr1 cdr2 in
                 if(flag = 0 && car1 != car2) then
@@ -113,37 +113,30 @@ module Bigint = struct
 
     let two_times num =  add' num num 0   
 
-   
-
-    let rec mul' list1 list2 p2 = 
+    let rec mul' list1 p2 list2 = 
     if (cmp' p2 list1) = 1 
         then [], list1
     else let product, remainder  = 
-            mul' list1 (two_times list2) (two_times p2) in 
-        if (cmp' remainder p2) < 0  then product, remainder
+            mul' list1 (two_times p2) (two_times list2) in 
+        if (cmp' remainder p2) = -1  then product, remainder
             else (add' product list2 0), (trim (sub' remainder p2 0)) 
     
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
     if neg1 = neg2 
-        then let answer, _ = mul' value1 value2 [1] in Bigint(Pos, trim(answer))
+        then let answer, _ = mul' value1 [1]  in Bigint(Pos, trim(answer))
     else 
-        let answer,_ = mul' value1 value2 [1] in Bigint(Neg,trim(answer))
+        let answer,_ = mul' value1 [1] value2 in Bigint(Neg,trim(answer))
 
-     let rec div' list1 list2 p2 = 
+     (* let rec div' list1 list2 p2 = 
     if (cmp' list2 list1) = 1 
         then [], list1
     else let product, remainder  = 
             div' list1 (two_times list2) (two_times p2) in 
         if (cmp' remainder list2) = -1  then product, remainder
             else (add' product p2 0), (trim (sub' remainder list2 0)) 
+ *)
 
-
-    let div (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
-    if neg1 = neg2 
-        then let answer, _ = div' value1 value2 [1] in Bigint(Pos, trim(answer))
-    else 
-        let answer, _ = div' value1 value2 [1] in Bigint(Neg,trim(answer))
-
+    let div = add
     let rem = add
 
     let pow = add
