@@ -90,7 +90,7 @@ module Bigint = struct
         | car1::cdr1, car2::cdr2, carry ->
           let diff = car1 - car2 - carry
           in if(diff >= 0) then diff :: sub' cdr1 cdr2 0
-             else (diff + radix) :: sub' cdr1 cdr2 1 
+             else (diff + 10) :: sub' cdr1 cdr2 1 
          
 
     let add (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
