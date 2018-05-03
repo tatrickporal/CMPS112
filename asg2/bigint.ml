@@ -103,18 +103,18 @@ module Bigint = struct
             else Bigint (neg1, sub' value1 value2 0)
     
     let sub (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
-        if neg1 = neg2
+        if neg1 = neg2 then 
         begin
-            if (compare' value1 value2) = -1 then
+            if (cmp' value1 value2) = -1 then
             begin
                 let sign = (if neg1 = Pos then Neg else Pos) 
                 in Bigint (sign, sub' value2 value1 0)
             end
             else
                 Bigint (neg1, sub' value1 value2 0)
-end
-        else Bigint (neg1, add' value1 value2 0)
-
+        end
+        else
+Bigint (neg1, add' value1 value2 0)
 
     let two_times num =  add' num num 0   
 
