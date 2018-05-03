@@ -78,7 +78,7 @@ module Bigint = struct
         | car1::cdr1, car2::cdr2, carry ->
           let diff = car1 - car2 - carry
           in if(diff >= 0) then diff :: sub' cdr1 cdr2 0
-             else (diff + 10) :: sub' cdr1 cdr2 1 
+             else (diff + radix) :: sub' cdr1 cdr2 1 
          
 
     let add (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
@@ -106,13 +106,9 @@ module Bigint = struct
         if((cmp' remainder p2) < 0 ) then remainder, product
         else (sub' remainder p2 0), (add' product list2 0)
 
-
-    
-       
-
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
     if neg1 = neg2 
-        then Bigint(Pos,(mul' value1 value2 [1]) )
+        then Bigint(neg1,(mul' value1 value2 [1]) )
     else 
         Bigint(Neg,(mul' value1 value2 [1] ))
 
