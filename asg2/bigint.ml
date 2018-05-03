@@ -123,9 +123,9 @@ module Bigint = struct
   
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
     if neg1 = neg2
-        then let  answer,_ = mul' value1 [1] value2 in Bigint(Pos, trim(answer))
+        then let  answer,_ = mul' value1 [0] value2 in Bigint(Pos, trim(answer))
     else 
-        let answer,_ = mul' value1 [1] value2 in Bigint(Neg,answer)
+        let answer,_ = mul' value1 [0] value2 in Bigint(Neg,answer)
 
 
     let div (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
@@ -133,6 +133,7 @@ module Bigint = struct
         then let  quotient,_ = mul' value1 value2 [1] in Bigint(Pos, trim(quotient))
     else 
         let quotient,_ = mul' value1 value2 [1] in Bigint(Neg,quotient)
+
     let rem = add
 
     let pow = add
