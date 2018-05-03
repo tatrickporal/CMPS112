@@ -118,8 +118,7 @@ module Bigint = struct
     then list1,[1]
     else let left,right = mul' list1 (two_times p2) (two_times list2)
     in if (cmp' left p2 = -1) then left,right
-    else (sub' left p2 0), (add' right list2 0)
-    
+    else  (add' right list2 0),(sub' left p2 0)    
     
   
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
