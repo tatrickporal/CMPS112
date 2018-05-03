@@ -122,10 +122,10 @@ module Bigint = struct
             else (add' product p2 0), (trim (sub' remainder list2 0)) 
     
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
-    if neg1 = neg2 
-        then let answer, _ = mul' value1 value2 [1] in Bigint(Pos, trim(answer))
+    if neg1 = neg2
+        then let _, answer = mul' value1 value2 [1] in Bigint(Pos, trim(answer))
     else 
-        let answer,_ = mul' value1 value2 [1] in Bigint(Neg,trim(answer))
+        let _,answer = mul' value1 value2 [1] in Bigint(Neg,trim(answer))
 
 
    
