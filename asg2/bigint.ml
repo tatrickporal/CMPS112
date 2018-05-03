@@ -116,7 +116,7 @@ module Bigint = struct
     let rec mul' list1 p2 list2 = 
     (*Checking if p2 is > list1 BASECASE*)
     if(cmp' p2 list1) = 1
-    then [1],list1
+    then [1],list2
     (* Else go into recursion  *)
     else let left,right = mul' list1 (two_times p2) (two_times list2) in
     if (cmp' p2 left) = 1 then left,right
