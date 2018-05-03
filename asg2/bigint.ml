@@ -114,7 +114,7 @@ module Bigint = struct
     let two_times num =  add' num num 0   
 
     let rec mul' list1 p2 list2 = 
-    if(cmp' p2 value1) = 1
+    if(cmp' p2 list1) = 1
     then let answer,_ = p2, list1
     else then let answer,_ = p2, list1
     
