@@ -135,7 +135,7 @@ module Bigint = struct
         then let  quotient,_ = mul' value1 value2 [1] in Bigint(Pos, trim(quotient))
     else 
         let quotient,_ = mul' value1 value2 [1] in Bigint(Neg,quotient) *)
-
+    let div = add
     let rem = add
 
     let pow = add
