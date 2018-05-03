@@ -59,9 +59,7 @@ module Bigint = struct
                     if(car1<car2) then -1
                     else 1
                 else flag
-    let concat_list list1 = 
-        float_of_string (String.concat "" 
-(List.rev_map string_of_int list1))
+    
 
         let trim list =
         let rec trim' list' = match list' with
@@ -116,10 +114,10 @@ module Bigint = struct
     let two_times num =  add' num num 0   
 
     let rec mul' list1 p2 list2 = 
-    if(concat_list p2 > concat_list list1)
-    then list1,[0]
+    if(cmp' p2 list1 = 1)
+    then list1,[1]
     else let left,right = mul' list1 (two_times p2) (two_times list2)
-    in if concat_list left < concat_list p2 then left,right
+    in if (cmp' left p2 = -1) then left,right
     else (sub' left p2 0), (add' right list2 0)
     
     
