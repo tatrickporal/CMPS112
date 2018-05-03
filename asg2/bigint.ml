@@ -108,9 +108,9 @@ module Bigint = struct
 
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
     if neg1 = neg2 
-        then Bigint(neg1,(mul' value1 value2 [1]) )
+        then Bigint(neg1,add' value1 value2 1 )
     else 
-        Bigint(Neg,(mul' value1 value2 [1] ))
+        Bigint(Neg,add' value1 value2 [1] )
 
 
     let div = add
