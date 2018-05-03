@@ -118,7 +118,18 @@ module Bigint = struct
         let remainder,answer = mul' value1 value2 [1] in Bigint(Neg,answer)
 
 
-    let div = add
+    let rec div' list1 list2 p2 = 
+    if concat_list list2 > concat_list list1
+        then [0],list1
+    else let remainder, product = div' list1 (two_times list2) (two_times p2) in
+        if(concat_list remainder < concat_list list2) then remainder, product
+        else (add' product list2 0),(sub' remainder p2 0)
+
+    let div (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
+    if neg1 = neg2 
+        then let remainder, answer = mul' value1 value2 [1] in Bigint(Pos, answer)
+    else 
+        let remainder,answer = mul' value1 value2 [1] in Bigint(Neg,answer)
 
     let rem = add
 
