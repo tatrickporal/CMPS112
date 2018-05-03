@@ -106,11 +106,11 @@ module Bigint = struct
         if((strcat "" (List.rev_map string_of_int remainder)) < (strcat "" (List.rev_map string_of_int p2)) ) then remainder, product
         else (sub' remainder p2 0), (add' product list2 0)
 
-    let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
-    if neg1 = neg2 
+    let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) = add 
+    (* if neg1 = neg2 
         then let remainder, answer = mul' value1 value2 [1] in Bigint(Pos, answer)
     else 
-        let remainder,answer = mul' value1 value2 [1] in Bigint(Neg,answer)
+        let remainder,answer = mul' value1 value2 [1] in Bigint(Neg,answer) *)
 
 
     let div = add
