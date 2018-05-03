@@ -113,7 +113,8 @@ module Bigint = struct
             else
                 Bigint (neg1, sub' value1 value2 0)
 end
-        else zero
+        else Bigint (neg1, add' value1 value2 0)
+
 
     let two_times num =  add' num num 0   
 
