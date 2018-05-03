@@ -109,7 +109,7 @@ module Bigint = struct
             then let sign = (if neg1 = Pos then Neg else Pos) in 
             Bigint (sign, sub' value2 value1 0)
             else Bigint (neg1, sub' value1 value2 0)
-        else Bigint (neg1, add' value1 value2 0)
+        else zero
 
     let two_times num =  add' num num 0   
 
@@ -117,7 +117,7 @@ module Bigint = struct
     if (cmp' list1 p2) = -1
         then [], list1
     else let left,right = mul' list1 (two_times p2) (two_times list2) in
-    if (cmp' left p2) = -1 then left,right
+    if (cmp' right list2) = -1 then left,right
     else (add' left p2 0), (sub' right list2 0) 
 
 
@@ -126,7 +126,7 @@ module Bigint = struct
     
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
     if neg1 = neg2
-        then let  answer,_ = mul' value1 [1] value2  in Bigint(Pos, answer)
+        then let  answer,_ = mul' value1  value2 [1]  in Bigint(Pos, answer)
     else 
         let answer,_ = mul' value1 [1] value2 in Bigint(Neg,answer)
 
