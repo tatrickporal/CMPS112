@@ -62,13 +62,15 @@ module Bigint = struct
 
 
         let trim list =
-        let rec trim' list' = match list' with 
+        let rec trim' list' = match list' with
             | []       -> []
             | [0]      -> []
-            | car::cdr -> 
-                let cdr' = trim' cdr in match car,cdr' with 
-                    | 0, []  -> []
-                    | car, cdr' -> car::cdr' in trim' list
+            | car::cdr ->
+                 let cdr' = trim' cdr
+                 in  match car, cdr' with
+                     | 0, [] -> []
+                     | car, cdr' -> car::cdr'
+                     in trim' list
 
 
     let rec add' list1 list2 carry = match (list1, list2, carry) with
