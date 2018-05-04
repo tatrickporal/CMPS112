@@ -52,7 +52,6 @@ module Bigint = struct
     let rec cmp' list1 list2 = match (list1,list2) with
         | list1, []      -> 1 
         | [], list2      -> -1 
-        | [],[]          -> 0 
         | car1::cdr1, car2::cdr2 ->
             let flag = cmp' cdr1 cdr2 in
                 if(flag = 0 && car1 != car2) then
