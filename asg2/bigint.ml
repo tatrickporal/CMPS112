@@ -147,9 +147,9 @@ module Bigint = struct
     
     let rem (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
     if neg1 = neg2
-        then let  _,remainder = divrem value1 value2  in Bigint(Pos, trim(quotient))
+        then let  _,remainder = divrem value1 value2  in Bigint(Pos, trim(remainder))
     else 
-        let _,remainder = divrem value1 value2  in Bigint(Neg,quotient)
+        let _,remainder = divrem value1 value2  in Bigint(Neg,remainder)
 
     let pow = add
 
