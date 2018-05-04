@@ -155,7 +155,7 @@ module Bigint = struct
 
     let rec pow' base expt result = match expt with 
     |0 -> result
-    |expt -> (let _,product = mul' base [1] base in product) (let quotient,_ = divrem' expt [1] [2] in quotient) result
+    |expt -> pow' (let _,product = mul' base [1] base in product) (let quotient,_ = divrem' expt [1] [2] in quotient) result
     
     
     let pow (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
