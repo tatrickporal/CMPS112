@@ -160,7 +160,7 @@ module Bigint = struct
     
     let pow (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
     if neg2 = Pos 
-    then Bigint(Pos, pow' value1 value2 [1])
+    then Bigint(Pos, pow' value1 value2 value1)
     else zero
 
 end
