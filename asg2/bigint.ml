@@ -106,7 +106,7 @@ module Bigint = struct
         if neg1 = neg2
         then let flag = cmp' value1 value2 in 
             if flag < 0 
-            then let sign = (if neg2 = Pos then Pos else Neg) in 
+            then let sign = (if neg1 = Pos then Neg else Pos) in 
             Bigint (sign, sub' value2 value1 0)
             else Bigint (neg1, sub' value1 value2 0)
         else zero
