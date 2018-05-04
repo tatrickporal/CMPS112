@@ -149,13 +149,14 @@ module Bigint = struct
     if neg1 = neg2
         then let  _,remainder = divrem value1 value2  in Bigint(Pos, trim(remainder))
     else 
-        let _,remainder = divrem value1 value2  in Bigint(Neg,remainder)
+        let _,remainder = divrem value1 value2  in Bigint(Neg,trim(remainder))
 
 
 
     let rec pow' base expt result = match expt with 
     |0 -> result
-    |expt -> let _,product = mul' base [1] base 
+    |expt -> 
+            let _,product = mul' base [1] base 
              in let quotient,_ = divrem expt [2] 
              in pow' product quotient result
     
