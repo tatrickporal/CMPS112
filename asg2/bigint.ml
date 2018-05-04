@@ -71,6 +71,7 @@ module Bigint = struct
                      | car, cdr' -> car::cdr'
                      in trim' list
 
+    let even num = (let res = mod_float (concat_list num) 2.0 in res = 0.0)
 
     let rec add' list1 list2 carry = match (list1, list2, carry) with
         | list1, [], 0       -> list1
@@ -93,21 +94,12 @@ module Bigint = struct
          
 
     let add (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
-        let cmp = (cmp' value1 value2) in
         if neg1 = neg2
         then Bigint (neg1, add' value1 value2 0)
-        else
-            begin
-                 if cmp = -1 then
-                    Bigint (neg2, sub' value2 value1 0)
-                 else
-                    Bigint (neg1, sub' value1 value2 0)
-end(* if neg1 = neg2
-        then Bigint (neg1, add' value1 value2 0)
-        else zerolet flag = cmp' value1 value2 in
+        else let flag = cmp' value1 value2 in
              if flag = 1
              then Bigint(neg1, sub' value1 value2 0)
-             else Bigint(neg2, sub' value2 value1 0)  *)
+             else Bigint(neg2, sub' value2 value1 0) 
 
     let sub (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
         if neg1 = neg2
@@ -159,7 +151,18 @@ end(* if neg1 = neg2
     else 
         let _,remainder = divrem value1 value2  in Bigint(Neg,remainder)
 
-    let pow = add
+
+
+    let rec pow' base expt result = match expt with 
+    |0 -> result
+    |expt -> if(even expt) then pow' (let _,product = mul' base [1] base in product) (let quotient,_ = divrem' expt [1] [2] in quotient) result
+             else pow' base (sub' expt [1] 0) (let _,product = base [1] result in product)
+    
+    
+    let pow (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
+    if neg2 = Pos 
+    then Bigint(Pos, pow' value1 value2 [1])
+    else zero
 
 end
 
