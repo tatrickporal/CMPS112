@@ -71,7 +71,7 @@ module Bigint = struct
                      | car, cdr' -> car::cdr'
                      in trim' list
 
-    let even num = (let res = mod_float (concat_list num) 2.0 in res = 0.0)
+    
 
     let rec add' list1 list2 carry = match (list1, list2, carry) with
         | list1, [], 0       -> list1
@@ -155,8 +155,7 @@ module Bigint = struct
 
     let rec pow' base expt result = match expt with 
     |0 -> result
-    |expt -> if(even expt) then pow' (let _,product = mul' base [1] base in product) (let quotient,_ = divrem' expt [1] [2] in quotient) result
-             else pow' base (sub' expt [1] 0) (let _,product = base [1] result in product)
+    |expt -> (let _,product = mul' base [1] base in product) (let quotient,_ = divrem' expt [1] [2] in quotient) result
     
     
     let pow (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
