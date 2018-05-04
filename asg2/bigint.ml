@@ -131,7 +131,7 @@ module Bigint = struct
     let rec divrem' dividend p2 divisor = 
     if (cmp' divisor dividend) = 1
     then [0], dividend
-    else let quotient,remainder = divrem' dividend (two_times p2) two_times divisor in
+    else let quotient,remainder = divrem' dividend (two_times p2) (two_times divisor) in
     if cmp' remainder divisor = -1
     then quotient,remainder
     else (add' quotient p2 0), (sub' remainder divisor 0)
