@@ -104,7 +104,7 @@ module Bigint = struct
     let sub (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
         if neg1 = neg2
         then let flag = cmp' value1 value2 in 
-            if flag < 0 
+            if flag = -1 
             then let sign = (if neg1 = Pos then Neg else Pos) in 
             Bigint (sign, sub' value2 value1 0)
             else Bigint (neg1, sub' value1 value2 0)
@@ -129,12 +129,13 @@ module Bigint = struct
         let  _,answer = mul' value1 [1] value2 in Bigint(Neg, answer)
 
 
-    (* let div (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
+    let div (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
     if neg1 = neg2
         then let  quotient,_ = mul' value1 value2 [1] in Bigint(Pos, trim(quotient))
     else 
-        let quotient,_ = mul' value1 value2 [1] in Bigint(Neg,quotient) *)
-    let div = add
+        let quotient,_ = mul' value1 value2 [1] in Bigint(Neg,quotient)
+
+    
     let rem = add
 
     let pow = add
