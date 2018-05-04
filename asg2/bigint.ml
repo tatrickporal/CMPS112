@@ -109,7 +109,7 @@ module Bigint = struct
             then let sign = (if neg2 = Pos then Pos else Neg) in 
             Bigint (sign, sub' value2 value1 0)
             else Bigint (neg1, sub' value1 value2 0)
-
+        else zero
 
     let two_times num =  add' num num 0   
 
