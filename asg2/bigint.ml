@@ -124,9 +124,9 @@ module Bigint = struct
   
     let mul (Bigint (neg1, value1)) (Bigint (neg2, value2)) =
     if neg1 = neg2
-        then let  _,answer = mul' value1 [1] value2 in Bigint(Pos, answer)
+        then let  _,answer = mul' value1 [1] value2 in Bigint(Pos, trim(answer))
     else 
-        let  _,answer = mul' value1 [1] value2 in Bigint(Neg, answer)
+        let  _,answer = mul' value1 [1] value2 in Bigint(Neg, trim(answer))
 
     let rec divrem' dividend p2 divisor = 
     if (cmp' divisor dividend) = 1
@@ -142,7 +142,7 @@ module Bigint = struct
     if neg1 = neg2
         then let  quotient,_ = divrem value1 value2  in Bigint(Pos, trim(quotient))
     else 
-        let quotient,_ = divrem value1 value2  in Bigint(Neg,quotient)
+        let quotient,_ = divrem value1 value2  in Bigint(Neg,trim(quotient))
 
     
     let rem (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
@@ -155,7 +155,7 @@ module Bigint = struct
 
     let rec pow' base expt result = match expt with 
     |0 -> result
-    |expt -> pow' (let _,product = mul' base [1] base in product) (let quotient,_ = divrem' expt [2] in quotient) result
+    |expt -> pow' (let _,product = mul' base [1] base in product) (let quotient,_ = divrem expt [2] in quotient) result
     
     
     let pow (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
