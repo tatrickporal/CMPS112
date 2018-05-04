@@ -128,12 +128,21 @@ module Bigint = struct
     else 
         let  _,answer = mul' value1 [1] value2 in Bigint(Neg, answer)
 
+    let rec divrem' dividend p2 divisor = 
+    if (cmp' divisor dividend) = 1
+    then [0], dividend
+    else let quotient,remainder = divrem' dividend (two_times p2) two_times divisor in
+    if cmp' remainder divisor = -1
+    then quotient,remainder
+    else (add' quotient p2 0), (sub' remainder divisor 0)
+
+    let divrem dividend divisor = divrem' dividend [1] divisor
 
     let div (Bigint (neg1, value1)) (Bigint (neg2, value2)) = 
     if neg1 = neg2
-        then let  quotient,_ = mul' value1 value2 [1] in Bigint(Pos, trim(quotient))
+        then let  quotient,_ = divrem value1 value2  in Bigint(Pos, trim(quotient))
     else 
-        let quotient,_ = mul' value1 value2 [1] in Bigint(Neg,quotient)
+        let quotient,_ = divrem value1 value2  in Bigint(Neg,quotient)
 
     
     let rem = add
