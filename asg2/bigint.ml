@@ -164,6 +164,7 @@ module Bigint = struct
     if neg2 = Pos 
     then Bigint(Pos, pow' value1 value2 value1)
     else zero *)
+    let pow = add
 
 end
 
