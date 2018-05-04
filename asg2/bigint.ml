@@ -157,7 +157,7 @@ module Bigint = struct
     |0 -> result
     |expt -> 
             let _,product = mul' base [1] base 
-             in let quotient,_ = divrem expt [2] 
+             in let quotient,_ = divrem' expt [1] [2] 
              in pow' product quotient result
     
     
