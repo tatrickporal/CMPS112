@@ -9,7 +9,7 @@ nl := Character nl.
 "Then exit with status 127."
 ""
 
-stdout << 'Hello, World!' << nl << RCSID << nl.
+stdout << 'Hello, World! YUPPPPPPPP' << nl << RCSID << nl.
 
 status := 127.
 stderr << execname << ': ' << 'Quitting with status ' << status << nl.
