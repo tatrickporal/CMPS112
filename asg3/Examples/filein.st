@@ -2,7 +2,7 @@
 "$Id: filein.st,v 1.2 2011-05-12 13:13:20-07 - - $"
 execname := '$RCSfile: filein.st,v $' =~ '.*: (.*),v.*' at: 1.
 stdout << 'Starting ' << execname << '.'; nl.
-FileStream fileIn: execname << '.'; nl.
+FileStream fileIn: 'tredewew.st'.
 stdout << 'Finished ' << execname << '.'; nl.
 
 "TEST: filein.st"
