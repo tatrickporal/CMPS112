@@ -5,7 +5,7 @@ stdout << 'Starting ' << execname << '.'; nl.
 
 
 "Getting the input file from the command line arguments"
-
+"
 FileStream extend [
    nl := Character nl.
    catFile [
@@ -46,15 +46,24 @@ Smalltalk arguments size = 0
                ]
             ]
       ]
-   ]
+   ]"
 
 
 
 "Reading file and creating the char frequency table"
+FileStream fileIn: 'tree.st'./st
 
 
 
 
 
 
-stdout << 'Finished working on ' << execname << '.'; nl.
+
+
+
+
+
+
+
+
+stdout << 'Finished please work' << execname << '.'; nl.
