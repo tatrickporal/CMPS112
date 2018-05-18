@@ -7,7 +7,7 @@ stdout << 'Starting ' << execname << '.'; nl.
 "Getting the input file from the command line arguments"
 
 FileStream extend [
-   nl := Character nl
+   nl := Character nl.
    catFile [
       |count|
       count := 0.
