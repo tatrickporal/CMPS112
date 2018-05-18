@@ -19,7 +19,7 @@ FileStream extend [
    ]
 ]
 
-nl := Character nl.
+"nl := Character nl.
 Smalltalk arguments size = 0
    ifTrue: [stdin catFile]
    ifFalse: [
@@ -47,11 +47,11 @@ Smalltalk arguments size = 0
             ]
       ]
    ]
-
+"
 
 
 "Reading file and creating the char frequency table"
-"FileStream fileIn: 'tree.st'./st"
+FileStream fileIn: 'tree.st'./st
 
 
 
