@@ -3,7 +3,7 @@
 execname := '$RCSfile: catfile.st,v $' =~ '.*: (.*),v.*' at: 1.
 
 FileStream extend [
-   nl := Character nl.
+   nl := Character nl.asg3
    catFile [
       |count|
       count := 0.
@@ -44,9 +44,9 @@ Smalltalk arguments size = 0
       ]
    ]
 
-"TEST: echo 'This is a test file.' >test.data"
-"TEST: echo 'Hello, world!' >>test.data"
-"TEST: echo 'foo bar baz qux' >>test.data"
-"TEST: catfile.st test.data mks /dev/null"
-"TEST: rm test.data"
+"TEST: echo 'This is a test file.' >test1.in"
+"TEST: echo 'Hello, world!' >>test1.out"
+"TEST: echo 'foo bar baz qux' >>test.out"
+"TEST: catfile.st test.out mks /dev/null"
+"TEST: rm test.out"
 
