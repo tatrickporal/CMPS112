@@ -3,7 +3,7 @@
 execname := '$RCSfile: catfile.st,v $' =~ '.*: (.*),v.*' at: 1.
 
 FileStream extend [
-   nl := Character nl.asg3
+   nl := Character nl.
    catFile [
       |count|
       count := 0.
