@@ -66,4 +66,4 @@ FileStream fileIn: 'tree.st'./st
 
 
 
-stdout << 'Finished please work' << execname << '.'; nl.
+stdout << 'Finished ' << execname << '.'; nl.
