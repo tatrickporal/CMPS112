@@ -1,11 +1,11 @@
 #!/afs/cats.ucsc.edu/courses/cmps112-wm/usr/smalltalk/bin/gst -f
 "$Id: hzip.st,v 1.2 2018-05-17 14:02:20-07 - - $"
 execname := '$RCSfile: hzip.st,v $' =~ '.*: (.*),v.*' at: 1.
-stdout << 'Starting work' << execname << '.'; nl.
+stdout << 'Starting ' << execname << '.'; nl.
 
 
 "Getting the input file from the command line arguments"
-"
+
 FileStream extend [
    nl := Character nl.
    catFile [
@@ -46,7 +46,7 @@ Smalltalk arguments size = 0
                ]
             ]
       ]
-   ]"
+   ]
 
 
 
