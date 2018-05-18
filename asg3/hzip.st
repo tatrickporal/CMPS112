@@ -51,6 +51,12 @@ Smalltalk arguments size = 0
 
 
 "Reading file and creating the char frequency table"
+
+"TEST: echo 'This is a test file.' >test1.in"
+"TEST: echo 'Hello, world!' >>test1.out"
+"TEST: echo 'foo bar baz qux' >>test.out"
+"TEST: catfile.st test.out mks /dev/null"
+"TEST: rm test.out"
 "FileStream fileIn: 'tree.st'./st"
 
 
